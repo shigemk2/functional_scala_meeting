@@ -29,7 +29,63 @@
     </div>
 
     <div class="step slide" data-x="1000" data-y="-1500">
-      <q></q>
+      <q>今日はScala初心者がScalaのクラスファイルについて話します</q>
+    </div>
+
+    <div class="step slide" data-x="2000" data-y="-1500">
+      <q>クラスファイルはScalaやJavaでコンパイルしたあとに出来る中間ファイルのことです</q>
+      <q>この本は名著 熱血!アセンブラ入門にわりとインスパイヤされたパチモンです</q>
+    </div>
+
+    <div class="step slide" data-x="3000" data-y="-1500">
+      <q style="position: absolute; top: 0; margin-top: 0; font-size: 35px;">熱血!アセンブラ入門P3より</q>
+      <img style="position: absolute; top: 95px; left: 40px;" width="800" height="600" src="./img/binarian10.png" />
+    </div>
+
+    <div class="step slide" data-x="4000" data-y="-1500">
+      <q>Scalaのクラスファイルを<strong>フィーリング</strong>で<strong>なんとなく</strong>読んでみよう</q>
+    </div>
+
+    <div class="step slide" data-x="5000" data-y="-1500">
+      <q>Scalaのクラスファイルを読む前に、まずはJavaのクラスファイルを読んでみる</q>
+    </div>
+
+    <div class="step slide" data-x="6000" data-y="-1500">
+      <q>JavaのHello, World</q>
+      <img width="780" height="370" src="./img/helloworldjava.png" />
+    </div>
+
+    <div class="step slide" data-x="7000" data-y="-1500">
+      <q>javac -g HelloWorldJava.java</q>
+      <q>javap -v -p -c HelloWorldJava</q>
+    </div>
+
+    <div class="step slide" data-x="8000" data-y="-1500">
+      <q>逆アセンブル結果(一部)</q>
+      <img width="780" height="370" src="./img/helloworldjava_disasm.png" />
+    </div>
+
+    <div class="step slide" data-x="9000" data-y="-1500">
+      <q>さっくりとした構成</q>
+    </div>
+
+    <div class="step slide" data-x="10000" data-y="-1500">
+      <q style="margin-top: 0;">前置き部分</q>
+      <img width="780" height="570" src="./img/classfile_prefix.png" />
+    </div>
+
+    <div class="step slide" data-x="11000" data-y="-1500">
+      <q style="margin-top: 0;">定数プール</q>
+      <img width="780" height="570" src="./img/classfile_constant_pool.png" />
+    </div>
+
+    <div class="step slide" data-x="12000" data-y="-1500">
+      <q style="margin-top: 0;">本体</q>
+      <img width="780" height="570" src="./img/classfile_body.png" />
+    </div>
+
+    <div class="step slide" data-x="13000" data-y="-1500">
+      <q>前置きとか定数プールとかは無視して、本体のところだけ読んでいきます</q>
     </div>
 </div>
 <div class="hint">
