@@ -98,11 +98,25 @@
 
     <div class="step slide" data-x="16000" data-y="-1500">
       <q style="margin-top: 0;">Hello,World本体(Java)</q>
-      <q style="position:absolute; top:260px; left:400px; font-size:40px"><span style="color: red; font-weight: bold;">クラスフィールド読み込み</span></q>
-      <q style="position:absolute; top:340px; left:400px; font-size:40px"><span style="color: red; font-weight: bold;">文字列読み込み</span></q>
-      <q style="position:absolute; top:410px; left:400px; font-size:40px"><span style="color: red; font-weight: bold;">printlnメソッド呼び出し</span></q>
-      <q style="position:absolute; top:480px; left:400px; font-size:40px"><span style="color: red; font-weight: bold;">return void</span></q>
-      <img width="780" height="570" src="./img/classfile_helloworld_ex.png" />
+      <pre><code>
+public class HelloWorldJava {
+    public static void main(String[] args){
+        System.out.println("Hello, world.");
+    }
+}
+      </code></pre>
+      <q style="margin-top: 0;">逆アセンブル結果</q>
+      <pre><code>
+0: getstatic     #2 // クラスフィールド読み込み
+3: ldc           #3 // 文字列読み込み
+5: invokevirtual #4 // printlnメソッド呼び出し
+8: return           // return void
+      </code></pre>
+      <!-- <q style="position:absolute; top:260px; left:400px; font-size:40px"><span style="color: red; font-weight: bold;">クラスフィールド読み込み</span></q> -->
+      <!-- <q style="position:absolute; top:340px; left:400px; font-size:40px"><span style="color: red; font-weight: bold;">文字列読み込み</span></q> -->
+      <!-- <q style="position:absolute; top:410px; left:400px; font-size:40px"><span style="color: red; font-weight: bold;">printlnメソッド呼び出し</span></q> -->
+      <!-- <q style="position:absolute; top:480px; left:400px; font-size:40px"><span style="color: red; font-weight: bold;">return void</span></q> -->
+      <!-- <img width="780" height="570" src="./img/classfile_helloworld_ex.png" /> -->
     </div>
 
     <div class="step slide" data-x="17000" data-y="-1500">
