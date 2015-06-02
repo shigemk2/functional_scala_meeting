@@ -65,8 +65,8 @@ public class HelloWorldJava {
     <div class="step slide" data-x="7000" data-y="-1500">
       <q>コンパイルと逆アセンブルのコマンド</q>
       <pre><code>
-      javac -g HelloWorldJava.java
-      javap -v -p HelloWorldJava
+javac -g HelloWorldJava.java
+javap -v -p HelloWorldJava
       </code></pre>
     </div>
 
@@ -81,7 +81,18 @@ public class HelloWorldJava {
 
     <div class="step slide" data-x="10000" data-y="-1500">
       <q style="margin-top: 0;">前置き部分</q>
-      <img width="780" height="370" src="./img/classfile_prefix.png" />
+      <pre><code style="font-size: 55%; font-weight: bold;">
+Classfile /home/shigemk2/projects/github.com/shigemk2/scala_jvm/HelloWorldJava.class
+  Last modified 2015/05/26; size 547 bytes
+  MD5 checksum fe3b93e48c1c3ce255c71714786c4dcd
+  Compiled from "HelloWorldJava.java"
+public class HelloWorldJava
+  SourceFile: "HelloWorldJava.java"
+  minor version: 0
+  major version: 51
+  flags: ACC_PUBLIC, ACC_SUPER
+      </code></pre>
+      <!-- <img width="780" height="370" src="./img/classfile_prefix.png" /> -->
     </div>
 
     <div class="step slide" data-x="11000" data-y="-1500">

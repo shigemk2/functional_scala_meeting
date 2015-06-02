@@ -82,7 +82,8 @@ pre {
 code {
     /* background-color: black; */
     /* color: white; */
-    font-size: 40px;
+    font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
+    font-size: 30px;
 }
 
 /*
