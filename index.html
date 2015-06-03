@@ -361,8 +361,34 @@ object PlusScala {
     </div>
 
     <div class="step slide" data-x="32000" data-y="-1500">
-      <q style="margin-top: 0;">Interface vs Trait</q>
-      <img width="780" height="570" src="./img/interface_trait.png" />
+      <q style="margin-top: -30px; font-size: 80%; line-height:1.5;">Interface</q>
+      <pre style=" left: 30px; line-height: 60%"><code style="font-size: 60%;">interface Interface {
+    String method(String a, String b);
+}
+public class InterfaceJava implements Interface {
+    public String method(String a, String b) {
+        return a + b;
+    }
+    public static void main(String[] args){
+        InterfaceJava a = new InterfaceJava();
+    }
+}</code></pre>
+      <q style="margin-top: 0px; font-size: 80%; line-height:1.5;">Trait</q>
+      <pre style=" left: 30px; line-height: 60%;"><code style="font-size: 60%;">trait Trait {
+  def method(a:String, b:String): String
+}
+class TraitScala extends Trait {
+  def method(a:String, b:String): String = {
+    a + b
+  }
+}
+object TraitScala {
+  def main(args: Array[String]) :Unit = {
+    val a = new TraitScala()
+  }
+}
+</code></pre>
+      <!-- <img width="780" height="570" src="./img/interface_trait.png" /> -->
     </div>
 
     <div class="step slide" data-x="33000" data-y="-1500">
