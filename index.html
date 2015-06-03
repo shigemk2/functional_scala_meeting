@@ -420,10 +420,28 @@ object TraitScala {
     </div>
 
     <div class="step slide" data-x="34000" data-y="-1500">
-      <q style="margin-top: 0;">コード</q>
-      <img width="780" height="180" src="./img/interface_vs_trait.png" />
-      <q style="margin-top: 0;">逆アセンブル</q>
-      <img width="780" height="240" src="./img/interface_trait_disasm.png" />
+      <q style="margin-top: 0px; font-size: 80%; line-height:1.5;">Interface</q>
+      <pre style=" left: 30px; line-height: 1.2;"><code style="font-size: 70%;">interface Interface {
+    String method(String a, String b);
+}</code></pre>
+      <q style="margin-top: 0px; font-size: 80%; line-height:1.5;">Interface逆アセンブル</q>
+      <pre style=" left: 30px; line-height: 1.2;"><code style="font-size: 60%;">{
+  public abstract java.lang.String method(java.lang.String, java.lang.String);
+    flags: ACC_PUBLIC, ACC_ABSTRACT
+}</code></pre>
+      <q style="margin-top: 0px; font-size: 80%; line-height:1.5;">Trait</q>
+      <pre style=" left: 30px; line-height: 1.2;"><code style="font-size: 70%;">trait Trait {
+  def method(a:String, b:String): String
+}</code></pre>
+      <q style="margin-top: 0px; font-size: 80%; line-height:1.5;">Trait逆アセンブル</q>
+      <pre style=" left: 30px; line-height: 1.2;"><code style="font-size: 60%;">{
+  public abstract java.lang.String method(java.lang.String, java.lang.String);
+    flags: ACC_PUBLIC, ACC_ABSTRACT
+}</code></pre>
+      <!-- <q style="margin-top: 0;">コード</q> -->
+      <!-- <img width="780" height="180" src="./img/interface_vs_trait.png" /> -->
+      <!-- <q style="margin-top: 0;">逆アセンブル</q> -->
+      <!-- <img width="780" height="240" src="./img/interface_trait_disasm.png" /> -->
     </div>
 
     <div class="step slide" data-x="35000" data-y="-1500">
