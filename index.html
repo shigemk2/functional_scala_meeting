@@ -517,7 +517,19 @@ object TraitScala {
 
     <div class="step slide" data-x="41000" data-y="-1500">
       <q style="margin-top: 0;">末尾再帰</q>
-      <img width="780" height="470" src="./img/factorial_scala_ta.png" />
+      <pre style=" left: 30px; line-height: 1.5;"><code style="font-size: 100%;">object FactorialTAScala {
+  def fact(n: Int): Int = {
+    def go(n: Int, acc: Int): Int =
+      if (n <= 0) acc
+      else go(n - 1, n * acc)
+    go(n, 1)
+  }
+
+  def main(args: Array[String]) :Unit = {
+    fact(5)
+  }
+}</code></pre>
+      <!-- <img width="780" height="470" src="./img/factorial_scala_ta.png" /> -->
     </div>
 
     <div class="step slide" data-x="42000" data-y="-1500">
