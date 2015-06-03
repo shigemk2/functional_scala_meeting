@@ -52,17 +52,38 @@
 
     <div class="step slide" data-x="6000" data-y="-1500">
       <q>JavaのHello, World</q>
-      <img width="780" height="370" src="./img/helloworldjava.png" />
+      <pre><code>
+public class HelloWorldJava {
+    public static void main(String[] args){
+        System.out.println("Hello, world.");
+    }
+}
+      </code></pre>
+      <!-- <img width="780" height="370" src="./img/helloworldjava.png" /> -->
     </div>
 
     <div class="step slide" data-x="7000" data-y="-1500">
-      <q>javac -g HelloWorldJava.java</q>
-      <q>javap -v -p -c HelloWorldJava</q>
+      <q>コンパイルと逆アセンブルのコマンド</q>
+      <pre><code>
+javac -g HelloWorldJava.java
+javap -v -p HelloWorldJava
+      </code></pre>
     </div>
 
     <div class="step slide" data-x="8000" data-y="-1500">
       <q>逆アセンブル結果(一部)</q>
-      <img width="780" height="370" src="./img/helloworldjava_disasm.png" />
+      <pre><code style="font-size: 55%; font-weight: bold;">
+Classfile /home/shigemk2/projects/github.com/shigemk2/scala_jvm/HelloWorldJava.class
+  Last modified 2015/05/26; size 547 bytes
+  MD5 checksum fe3b93e48c1c3ce255c71714786c4dcd
+  Compiled from "HelloWorldJava.java"
+public class HelloWorldJava
+  SourceFile: "HelloWorldJava.java"
+  minor version: 0
+  major version: 51
+  flags: ACC_PUBLIC, ACC_SUPER
+      </code></pre>
+      <!-- <img width="780" height="370" src="./img/helloworldjava_disasm.png" /> -->
     </div>
 
     <div class="step slide" data-x="9000" data-y="-1500">
@@ -71,17 +92,74 @@
 
     <div class="step slide" data-x="10000" data-y="-1500">
       <q style="margin-top: 0;">前置き部分</q>
-      <img width="780" height="370" src="./img/classfile_prefix.png" />
+      <pre><code style="font-size: 55%; font-weight: bold;">
+Classfile /home/shigemk2/projects/github.com/shigemk2/scala_jvm/HelloWorldJava.class
+  Last modified 2015/05/26; size 547 bytes
+  MD5 checksum fe3b93e48c1c3ce255c71714786c4dcd
+  Compiled from "HelloWorldJava.java"
+public class HelloWorldJava
+  SourceFile: "HelloWorldJava.java"
+  minor version: 0
+  major version: 51
+  flags: ACC_PUBLIC, ACC_SUPER
+      </code></pre>
+      <!-- <img width="780" height="370" src="./img/classfile_prefix.png" /> -->
     </div>
 
     <div class="step slide" data-x="11000" data-y="-1500">
-      <q style="margin-top: 0;">定数プール</q>
-      <img width="780" height="470" src="./img/classfile_constant_pool.png" />
+      <q style="margin-top: 0; font-size: 90%;">定数プール</q>
+      <pre style="position: absolute; top: 90px; left: 30px; line-height: 34%;"><code style="font-size: 55%; font-weight: bold;">
+Constant pool:
+   #1 = Methodref          #6.#20         //  java/lang/Object."<init>":()V
+   #2 = Fieldref           #21.#22        //  java/lang/System.out:Ljava/io/PrintStream;
+   #3 = String             #23            //  Hello, world.
+   #4 = Methodref          #24.#25        //  java/io/PrintStream.println:
+   #5 = Class              #26            //  HelloWorldJava
+   #6 = Class              #27            //  java/lang/Object
+   #7 = Utf8               <init>
+   #8 = Utf8               ()V
+   #9 = Utf8               Code
+  #10 = Utf8               LineNumberTable
+  #11 = Utf8               LocalVariableTable
+  #12 = Utf8               this
+  #13 = Utf8               LHelloWorldJava;
+  #14 = Utf8               main
+  #15 = Utf8               ([Ljava/lang/String;)V
+  #16 = Utf8               args
+  #17 = Utf8               [Ljava/lang/String;
+  #18 = Utf8               SourceFile
+  #19 = Utf8               HelloWorldJava.java
+  #20 = NameAndType        #7:#8          //  "<init>":()V
+  #21 = Class              #28            //  java/lang/System
+  #22 = NameAndType        #29:#30        //  out:Ljava/io/PrintStream;
+  #23 = Utf8               Hello, world.
+  #24 = Class              #31            //  java/io/PrintStream
+  #25 = NameAndType        #32:#33        //  println:(Ljava/lang/String;)V
+  #26 = Utf8               HelloWorldJava
+  #27 = Utf8               java/lang/Object
+  #28 = Utf8               java/lang/System
+  #29 = Utf8               out
+  #30 = Utf8               Ljava/io/PrintStream;
+  #31 = Utf8               java/io/PrintStream
+  #32 = Utf8               println
+  #33 = Utf8               (Ljava/lang/String;)V
+      </code></pre>
+      <!-- <img width="780" height="470" src="./img/classfile_constant_pool.png" /> -->
     </div>
 
     <div class="step slide" data-x="12000" data-y="-1500">
       <q style="margin-top: 0;">本体</q>
-      <img width="780" height="570" src="./img/classfile_body.png" />
+      <pre><code>
+{
+  public HelloWorldJava();
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1
+         4: return
+      </code></pre>
+      <!-- <img width="780" height="570" src="./img/classfile_body.png" /> -->
     </div>
 
     <div class="step slide" data-x="13000" data-y="-1500">
@@ -121,11 +199,25 @@ public class HelloWorldJava {
 
     <div class="step slide" data-x="17000" data-y="-1500">
       <q style="margin-top: 0;">Hello,World本体(Scala)</q>
-      <q style="position:absolute; top:330px; left:400px; font-size:40px"><span style="color: red; font-weight: bold;">クラスフィールド読み込み</span></q>
-      <q style="position:absolute; top:390px; left:400px; font-size:40px"><span style="color: red; font-weight: bold;">文字列読み込み</span></q>
-      <q style="position:absolute; top:460px; left:400px; font-size:40px"><span style="color: red; font-weight: bold;">printlnメソッド呼び出し</span></q>
-      <q style="position:absolute; top:530px; left:400px; font-size:40px"><span style="color: red; font-weight: bold;">return Unit</span></q>
-      <img width="780" height="570" src="./img/helloworld_scala.png" />
+      <pre><code>
+object HelloWorldScala {
+  def main(args: Array[String]) :Unit = {
+    println("hello, world")
+  }
+}
+      </code></pre>
+      <q style="margin-top: 0;">逆アセンブル結果</q>
+      <pre><code>
+0: getstatic     #19 // クラスフィールド読み込み
+3: ldc           #21 // 文字列読み込み
+5: invokevirtual #25 // printlnメソッド呼び出し
+8: return            // return Unit
+      </code></pre>
+      <!-- <q style="position:absolute; top:330px; left:400px; font-size:40px"><span style="color: red; font-weight: bold;">クラスフィールド読み込み</span></q> -->
+      <!-- <q style="position:absolute; top:390px; left:400px; font-size:40px"><span style="color: red; font-weight: bold;">文字列読み込み</span></q> -->
+      <!-- <q style="position:absolute; top:460px; left:400px; font-size:40px"><span style="color: red; font-weight: bold;">printlnメソッド呼び出し</span></q> -->
+      <!-- <q style="position:absolute; top:530px; left:400px; font-size:40px"><span style="color: red; font-weight: bold;">return Unit</span></q> -->
+      <!-- <img width="780" height="570" src="./img/helloworld_scala.png" /> -->
     </div>
 
     <div class="step slide" data-x="18000" data-y="-1500">
@@ -134,12 +226,34 @@ public class HelloWorldJava {
 
     <div class="step slide" data-x="19000" data-y="-1500">
       <q style="margin-top: 0; font-size: 34px;">FYI: もとのコードをJD-GUIでデコンパイルすると</q>
-      <img width="780" height="470" src="./img/helloworld_scala_orig.png" />
+      <pre><code>
+object HelloWorldScala {
+  def main(args: Array[String]) :Unit = {
+    println("hello, world")
+  }
+}
+      </code></pre>
+      <!-- <img width="780" height="470" src="./img/helloworld_scala_orig.png" /> -->
     </div>
 
     <div class="step slide" data-x="20000" data-y="-1500">
       <q style="margin-top: 0;">こうなる(コンパイル不可能)</q>
-      <img width="780" height="570" src="./img/helloworld_decompile.png" />
+      <pre><code>
+import scala.Predef.;
+public final class HelloWorldScala$ {
+  public static final  MODULE$;
+  static {
+    new ();
+  }
+  public void main(String[] args) {
+    Predef..MODULE$.println("hello, world");
+  }
+  private HelloWorldScala$() {
+    MODULE$ = this;
+  }
+}
+      </code></pre>
+      <!-- <img width="780" height="570" src="./img/helloworld_decompile.png" /> -->
     </div>
 
     <div class="step slide" data-x="21000" data-y="-1500">
@@ -152,23 +266,38 @@ public class HelloWorldJava {
 
     <div class="step slide" data-x="23000" data-y="-1500">
       <q style="margin-top: 0;">加算プログラム</q>
-      <img width="780" height="470" src="./img/scala_add.png" />
+      <pre><code>
+object PlusScala {
+  def main(args: Array[String]) :Unit = {
+    var a = 1
+    a = a + 2
+  }
+}
+      </code></pre>
+      <!-- <img width="780" height="470" src="./img/scala_add.png" /> -->
     </div>
 
     <div class="step slide" data-x="24000" data-y="-1500">
-      <q style="margin-top: 0;">加算プログラム(他のところは省略)</q>
-      <img width="780" height="570" src="./img/scala_add_disasm.png" />
+      <q style="margin-top: 0; font-size: 100%; line-height:2;">加算プログラム(他のところは省略)</q>
+      <pre><code>object PlusScala {
+  def main(args: Array[String]) :Unit = {
+    var a = 1
+    a = a + 2
+  }
+}</code></pre>
+      <q style="margin-top: 0; font-size: 100%; line-height:2;">逆アセンブル結果</q>
+      <pre><code style="font-size: 80%;">0: iconst_1 // 0: 定数1→スタック
+1: istore_2 // 1: スタックの値→ローカル変数2
+2: iload_2  // 2: ローカル変数2→スタック
+3: iconst_2 // 3: 定数2→スタック
+4: iadd     // 4: スタックの値を加算
+5: istore_2 // 5: 加算したスタックの値→ローカル変数2
+6: return   // 6: return unit</code></pre>
+      <!-- <img width="780" height="570" src="./img/scala_add_disasm.png" /> -->
     </div>
 
     <div class="step slide" data-x="25000" data-y="-1500">
-      <q style="margin-top: 0;">加算プログラム(他のところは省略)</q>
-      <q style="position:absolute; top:175px; left:350px; font-size:36px"><span style="color: red; font-weight: bold;">0: 定数1→スタック</span></q>
-      <q style="position:absolute; top:225px; left:350px; font-size:36px"><span style="color: red; font-weight: bold;">1: スタックの値→ローカル変数2</span></q>
-      <q style="position:absolute; top:285px; left:350px; font-size:36px"><span style="color: red; font-weight: bold;">2: ローカル変数2→スタック</span></q>
-      <q style="position:absolute; top:345px; left:350px; font-size:36px"><span style="color: red; font-weight: bold;">3: 定数2→スタック</span></q>
-      <q style="position:absolute; top:410px; left:350px; font-size:36px"><span style="color: red; font-weight: bold;">4: スタックの値を加算</span></q>
-      <q style="position:absolute; top:470px; left:350px; font-size:36px"><span style="color: red; font-weight: bold;">5: 加算したスタックの値→ローカル変数2</span></q>
-      <img width="780" height="570" src="./img/scala_add_disasm.png" />
+      <q>スタックとかローカル変数とかよくわからないので後述します</q>
     </div>
 
     <div class="step slide" data-x="26000" data-y="-1500">
@@ -188,17 +317,43 @@ public class HelloWorldJava {
     </div>
 
     <div class="step slide" data-x="29000" data-y="-1500">
-      <q style="margin-top: 0;">関数呼び出し</q>
-      <img width="780" height="470" src="./img/method_scala.png" />
+      <q style="margin-top: -30px; font-size: 90%; line-height:1.5;">関数呼び出し</q>
+      <pre style=" left: 30px; line-height: 2;"><code style="font-size: 100%;">object MethodScala {
+  def method(a: Int): Int = {
+    a
+  }
+  def main(args: Array[String]) :Unit = {
+    val a = 1
+    method(a)
+  }
+}</code></pre>
     </div>
 
     <div class="step slide" data-x="30000" data-y="-1500">
-      <q style="margin-top: 0;">関数呼び出しの流れ</q>
-      <img width="780" height="470" src="./img/method_scala.png" />
-      <q style="position:absolute; top:-45px; left:650px; font-size:40px"><span style="color: red; font-weight: bold;">method部分</span></q>
-      <q style="position:absolute; top:75px; left:650px; font-size:40px"><span style="color: red; font-weight: bold;">main部分</span></q>
-      <q style="position:absolute; top:225px; left:650px; font-size:40px"><span style="color: red; font-weight: bold;">val a = 1</span></q>
-      <q style="position:absolute; top:385px; left:650px; font-size:40px"><span style="color: red; font-weight: bold;">method(a)</span></q>
+      <q style="margin-top: -30px; font-size: 80%; line-height:1.5;">関数呼び出し</q>
+      <pre style=" left: 30px; line-height: 60%;"><code style="font-size: 60%;">object MethodScala {
+  def method(a: Int): Int = {
+    a
+  }
+  def main(args: Array[String]) :Unit = {
+    val a = 1
+    method(a)
+  }
+}</code></pre>
+      <q style="margin-top: 0px; font-size: 80%; line-height:1.5;">逆アセンブル method</q>
+      <pre><code style="font-size: 80%;">0: iload_1
+1: ireturn
+</code></pre>
+      <q style="margin-top: 0px; font-size: 80%; line-height:1.5;">逆アセンブル main</q>
+      <pre><code style="font-size: 80%;">0: iconst_1
+1: istore_2
+2: aload_0
+3: iload_2
+4: invokevirtual #21                 // Method method:(I)I
+7: pop
+8: return
+</code></pre>
+      <!-- <img width="780" height="470" src="./img/method_scala.png" /> -->
     </div>
 
     <div class="step slide" data-x="31000" data-y="-1500">
@@ -206,13 +361,62 @@ public class HelloWorldJava {
     </div>
 
     <div class="step slide" data-x="32000" data-y="-1500">
-      <q style="margin-top: 0;">Interface vs Trait</q>
-      <img width="780" height="570" src="./img/interface_trait.png" />
+      <q style="margin-top: -30px; font-size: 80%; line-height:1.5;">Interface</q>
+      <pre style=" left: 30px; line-height: 60%"><code style="font-size: 60%;">interface Interface {
+    String method(String a, String b);
+}
+public class InterfaceJava implements Interface {
+    public String method(String a, String b) {
+        return a + b;
+    }
+    public static void main(String[] args){
+        InterfaceJava a = new InterfaceJava();
+    }
+}</code></pre>
+      <q style="margin-top: 0px; font-size: 80%; line-height:1.5;">Trait</q>
+      <pre style=" left: 30px; line-height: 60%;"><code style="font-size: 60%;">trait Trait {
+  def method(a:String, b:String): String
+}
+class TraitScala extends Trait {
+  def method(a:String, b:String): String = {
+    a + b
+  }
+}
+object TraitScala {
+  def main(args: Array[String]) :Unit = {
+    val a = new TraitScala()
+  }
+}</code></pre>
+      <!-- <img width="780" height="570" src="./img/interface_trait.png" /> -->
     </div>
 
     <div class="step slide" data-x="33000" data-y="-1500">
-      <q style="margin-top: 0; font-size: 22px;">どっちも2つのクラスファイルが出てくるけど、InterfaceとTraitのほうをみます。</q>
-      <img width="780" height="570" src="./img/interface_trait.png" />
+      <q style="margin-top: -30px; font-size: 22px;">どっちも2つのクラスファイルが出てくるけど、InterfaceとTraitのほうをみます。</q>
+      <pre style=" left: 30px; line-height: 60%"><code style="font-size: 60%;">interface Interface {
+    String method(String a, String b);
+}
+public class InterfaceJava implements Interface {
+    public String method(String a, String b) {
+        return a + b;
+    }
+    public static void main(String[] args){
+        InterfaceJava a = new InterfaceJava();
+    }
+}</code></pre>
+      <pre style="margin-top: 10px; left: 30px; line-height: 60%;"><code style="font-size: 60%;">trait Trait {
+  def method(a:String, b:String): String
+}
+class TraitScala extends Trait {
+  def method(a:String, b:String): String = {
+    a + b
+  }
+}
+object TraitScala {
+  def main(args: Array[String]) :Unit = {
+    val a = new TraitScala()
+  }
+}</code></pre>
+      <!-- <img width="780" height="570" src="./img/interface_trait.png" /> -->
     </div>
 
     <div class="step slide" data-x="34000" data-y="-1500">
