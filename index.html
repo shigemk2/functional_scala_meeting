@@ -591,18 +591,18 @@ object TraitScala {
       <q style="margin-top: 15px; top: 25px; font-size: 20px; line-height: 100%;">逆アセンブル</q>
       <pre style="line-height: 45%;"><code style="font-size: 50%;">0: iload_1
 1: iconst_0
-2: if_icmpgt     7  // n <= 0 だと終了
+2: if_icmpgt     7
 5: iload_2
 6: ireturn
-7: iload_1          // go(n - 1, n * acc)の用意
+7: iload_1
 8: iconst_1
 9: isub
 10: iload_1
 11: iload_2
 12: imul
 13: istore_2
-14: istore_1        // go(n - 1, n * acc)の用意
-15: goto          0 // もとに戻る</code></pre>
+14: istore_1
+15: goto          0</code></pre>
     </div>
 
     <div class="step slide" data-x="52000" data-y="-1500">
@@ -628,24 +628,24 @@ object TraitScala {
       <q style="margin-top: 15px; top: 25px; font-size: 20px; line-height: 100%;">逆アセンブル</q>
       <pre style="line-height: 45%;"><code style="font-size: 50%;">0: iload_1
 1: iconst_0
-2: if_icmpgt     7
+2: if_icmpgt     7  // n <= 0 だと終了
 5: iload_2
 6: ireturn
-7: iload_1
+7: iload_1          // go(n - 1, n * acc)の用意
 8: iconst_1
 9: isub
 10: iload_1
 11: iload_2
 12: imul
-13: istore_2
-14: istore_1
-15: goto          0</code></pre>
+13: istore_2        // オペランドスタックをローカル変数に引っ込めている
+14: istore_1        // go(n - 1, n * acc)の用意
+15: goto          0 // もとに戻る</code></pre>
     </div>
 
     <div class="step slide" data-x="53000" data-y="-1500">
       <q style="margin: 10px; line-height: 50px;">ポイント</q>
       <q style="margin: 15px; line-height: 60px;">普通の再帰と比べてアセンブルも短め</q>
-      <q style="margin: 15px; line-height: 60px;">newとかdupとかしてない</q>
+      <q style="margin: 15px; line-height: 60px;">goを呼び出すたびにスタックのデータをローカル変数に引っ込めているので、fact(巨大数)でも<strong>スタックオーバーフローにならない</strong></q>
     </div>
 
     <div class="step slide" data-x="54000" data-y="-1500">
