@@ -57,9 +57,7 @@ public class HelloWorldJava {
     public static void main(String[] args){
         System.out.println("Hello, world.");
     }
-}
-      </code></pre>
-      <!-- <img width="780" height="370" src="./img/helloworldjava.png" /> -->
+}</code></pre>
     </div>
 
     <div class="step slide" data-x="7000" data-y="-1500">
@@ -83,7 +81,6 @@ public class HelloWorldJava
   major version: 51
   flags: ACC_PUBLIC, ACC_SUPER
       </code></pre>
-      <!-- <img width="780" height="370" src="./img/helloworldjava_disasm.png" /> -->
     </div>
 
     <div class="step slide" data-x="9000" data-y="-1500">
@@ -103,7 +100,6 @@ public class HelloWorldJava
   major version: 51
   flags: ACC_PUBLIC, ACC_SUPER
       </code></pre>
-      <!-- <img width="780" height="370" src="./img/classfile_prefix.png" /> -->
     </div>
 
     <div class="step slide" data-x="11000" data-y="-1500">
@@ -144,13 +140,11 @@ Constant pool:
   #32 = Utf8               println
   #33 = Utf8               (Ljava/lang/String;)V
       </code></pre>
-      <!-- <img width="780" height="470" src="./img/classfile_constant_pool.png" /> -->
     </div>
 
     <div class="step slide" data-x="12000" data-y="-1500">
       <q style="margin-top: 0;">本体</q>
-      <pre><code>
-{
+      <pre><code>{
   public HelloWorldJava();
     flags: ACC_PUBLIC
     Code:
@@ -159,7 +153,6 @@ Constant pool:
          1: invokespecial #1
          4: return
       </code></pre>
-      <!-- <img width="780" height="570" src="./img/classfile_body.png" /> -->
     </div>
 
     <div class="step slide" data-x="13000" data-y="-1500">
@@ -190,11 +183,6 @@ public class HelloWorldJava {
 5: invokevirtual #4 // printlnメソッド呼び出し
 8: return           // return void
       </code></pre>
-      <!-- <q style="position:absolute; top:260px; left:400px; font-size:40px"><span style="color: red; font-weight: bold;">クラスフィールド読み込み</span></q> -->
-      <!-- <q style="position:absolute; top:340px; left:400px; font-size:40px"><span style="color: red; font-weight: bold;">文字列読み込み</span></q> -->
-      <!-- <q style="position:absolute; top:410px; left:400px; font-size:40px"><span style="color: red; font-weight: bold;">printlnメソッド呼び出し</span></q> -->
-      <!-- <q style="position:absolute; top:480px; left:400px; font-size:40px"><span style="color: red; font-weight: bold;">return void</span></q> -->
-      <!-- <img width="780" height="570" src="./img/classfile_helloworld_ex.png" /> -->
     </div>
 
     <div class="step slide" data-x="17000" data-y="-1500">
@@ -213,11 +201,6 @@ object HelloWorldScala {
 5: invokevirtual #25 // printlnメソッド呼び出し
 8: return            // return Unit
       </code></pre>
-      <!-- <q style="position:absolute; top:330px; left:400px; font-size:40px"><span style="color: red; font-weight: bold;">クラスフィールド読み込み</span></q> -->
-      <!-- <q style="position:absolute; top:390px; left:400px; font-size:40px"><span style="color: red; font-weight: bold;">文字列読み込み</span></q> -->
-      <!-- <q style="position:absolute; top:460px; left:400px; font-size:40px"><span style="color: red; font-weight: bold;">printlnメソッド呼び出し</span></q> -->
-      <!-- <q style="position:absolute; top:530px; left:400px; font-size:40px"><span style="color: red; font-weight: bold;">return Unit</span></q> -->
-      <!-- <img width="780" height="570" src="./img/helloworld_scala.png" /> -->
     </div>
 
     <div class="step slide" data-x="18000" data-y="-1500">
@@ -231,9 +214,7 @@ object HelloWorldScala {
   def main(args: Array[String]) :Unit = {
     println("hello, world")
   }
-}
-      </code></pre>
-      <!-- <img width="780" height="470" src="./img/helloworld_scala_orig.png" /> -->
+}</code></pre>
     </div>
 
     <div class="step slide" data-x="20000" data-y="-1500">
@@ -251,9 +232,7 @@ public final class HelloWorldScala$ {
   private HelloWorldScala$() {
     MODULE$ = this;
   }
-}
-      </code></pre>
-      <!-- <img width="780" height="570" src="./img/helloworld_decompile.png" /> -->
+}</code></pre>
     </div>
 
     <div class="step slide" data-x="21000" data-y="-1500">
@@ -272,9 +251,7 @@ object PlusScala {
     var a = 1
     a = a + 2
   }
-}
-      </code></pre>
-      <!-- <img width="780" height="470" src="./img/scala_add.png" /> -->
+}</code></pre>
     </div>
 
     <div class="step slide" data-x="24000" data-y="-1500">
@@ -293,7 +270,6 @@ object PlusScala {
 4: iadd     // 4: スタックの値を加算
 5: istore_2 // 5: 加算したスタックの値→ローカル変数2
 6: return   // 6: return unit</code></pre>
-      <!-- <img width="780" height="570" src="./img/scala_add_disasm.png" /> -->
     </div>
 
     <div class="step slide" data-x="25000" data-y="-1500">
@@ -342,8 +318,7 @@ object PlusScala {
 }</code></pre>
       <q style="margin-top: 0px; font-size: 80%; line-height:1.5;">逆アセンブル method</q>
       <pre><code style="font-size: 80%;">0: iload_1
-1: ireturn
-</code></pre>
+1: ireturn</code></pre>
       <q style="margin-top: 0px; font-size: 80%; line-height:1.5;">逆アセンブル main</q>
       <pre><code style="font-size: 80%;">0: iconst_1
 1: istore_2
@@ -353,7 +328,6 @@ object PlusScala {
 7: pop
 8: return
 </code></pre>
-      <!-- <img width="780" height="470" src="./img/method_scala.png" /> -->
     </div>
 
     <div class="step slide" data-x="31000" data-y="-1500">
@@ -387,7 +361,6 @@ object TraitScala {
     val a = new TraitScala()
   }
 }</code></pre>
-      <!-- <img width="780" height="570" src="./img/interface_trait.png" /> -->
     </div>
 
     <div class="step slide" data-x="33000" data-y="-1500">
@@ -416,7 +389,6 @@ object TraitScala {
     val a = new TraitScala()
   }
 }</code></pre>
-      <!-- <img width="780" height="570" src="./img/interface_trait.png" /> -->
     </div>
 
     <div class="step slide" data-x="34000" data-y="-1500">
@@ -438,10 +410,6 @@ object TraitScala {
   public abstract java.lang.String method(java.lang.String, java.lang.String);
     flags: ACC_PUBLIC, ACC_ABSTRACT
 }</code></pre>
-      <!-- <q style="margin-top: 0;">コード</q> -->
-      <!-- <img width="780" height="180" src="./img/interface_vs_trait.png" /> -->
-      <!-- <q style="margin-top: 0;">逆アセンブル</q> -->
-      <!-- <img width="780" height="240" src="./img/interface_trait_disasm.png" /> -->
     </div>
 
     <div class="step slide" data-x="35000" data-y="-1500">
@@ -464,7 +432,6 @@ object TraitScala {
     fact(5)
   }
 }</code></pre>
-      <!-- <img width="780" height="570" src="./img/factorial_scala.png" /> -->
     </div>
 
     <div class="step slide" data-x="38000" data-y="-1500">
@@ -473,8 +440,7 @@ object TraitScala {
     case 0 => 1
     case n if n > 0 => n * fact(n - 1)
 }</code></pre>
-      <!-- <img width="780" height="170" src="./img/factorial_scala_fact.png" /> -->
-      <q style="margin-top: 15px; top: 25px; font-size: 20px; line-height: 100%;">逆アセンブル</q>
+            <q style="margin-top: 15px; top: 25px; font-size: 20px; line-height: 100%;">逆アセンブル</q>
       <pre style="line-height: 40%;"><code style="font-size: 50%;">0: iload_1
 1: istore_2
 2: iload_2
@@ -501,7 +467,6 @@ object TraitScala {
 48: athrow
 49: iconst_1
 50: ireturn</code></pre>
-      <!-- <img width="780" height="420" src="./img/factorial_scala_disasm.png" /> -->
     </div>
 
     <div class="step slide" data-x="39000" data-y="-1500">
@@ -529,7 +494,6 @@ object TraitScala {
     fact(5)
   }
 }</code></pre>
-      <!-- <img width="780" height="470" src="./img/factorial_scala_ta.png" /> -->
     </div>
 
     <div class="step slide" data-x="42000" data-y="-1500">
@@ -546,7 +510,6 @@ object TraitScala {
     fact(5)
   }
 }</code></pre>
-      <!-- <img width="780" height="170" src="./img/factorial_scala_fact.png" /> -->
       <q style="margin-top: 15px; top: 25px; font-size: 20px; line-height: 100%;">逆アセンブル</q>
       <pre style="line-height: 45%;"><code style="font-size: 50%;">0: aload_0
 1: iload_1
@@ -568,7 +531,6 @@ object TraitScala {
 13: istore_2
 14: istore_1
 15: goto          0</code></pre>
-      <!-- <img width="780" height="470" src="./img/factorial_scala_ta_fact.png" /> -->
     </div>
 
     <div class="step slide" data-x="43000" data-y="-1500">
@@ -585,7 +547,6 @@ object TraitScala {
     fact(5)
   }
 }</code></pre>
-      <!-- <img width="780" height="170" src="./img/factorial_scala_fact.png" /> -->
       <q style="margin-top: 15px; top: 25px; font-size: 20px; line-height: 100%;">逆アセンブル</q>
       <pre style="line-height: 45%;"><code style="font-size: 50%;">0: aload_0
 1: iload_1
@@ -607,7 +568,6 @@ object TraitScala {
 13: istore_2
 14: istore_1
 15: goto          0</code></pre>
-      <!-- <img width="780" height="570" src="./img/factorial_scala_ta_go.png" /> -->
     </div>
 
     <div class="step slide" data-x="44000" data-y="-1500">
