@@ -282,7 +282,7 @@ object PlusScala {
     </div>
 
     <div class="step slide" data-x="27000" data-y="-1500">
-      <q style="margin-top: 0; font-size: 100%; line-height:2;">加算プログラム(他のところは省略)</q>
+      <q style="margin-top: 0; font-size: 100%; line-height:2;">加算プログラムのソースコード</q>
       <pre><code>object PlusScala {
   def main(args: Array[String]) :Unit = {
     var a = 1
@@ -300,12 +300,33 @@ object PlusScala {
     </div>
 
     <div class="step slide" data-x="28000" data-y="-1500">
-      <q>スタックとかローカル変数とかよくわからないので後述します</q>
+      <q style="margin-top: 0; font-size: 100%; line-height:2;">加算プログラムのソースコード</q>
+      <pre><code>object PlusScala {
+  def main(args: Array[String]) :Unit = {
+    var a = 1
+    a = a + 2
+  }
+}</code></pre>
+      <q style="margin-top: 0; font-size: 100%; line-height:2; color: red;">この部分は何をしているのだろうか。</q>
+      <pre><code style="font-size: 80%;">0: iconst_1 // 0: 定数1→スタック
+1: istore_2 // 1: スタックの値→ローカル変数2
+2: iload_2  // 2: ローカル変数2→スタック
+3: iconst_2 // 3: 定数2→スタック
+4: iadd     // 4: スタックの値を加算
+5: istore_2 // 5: 加算したスタックの値→ローカル変数2
+6: return   // 6: return unit</code></pre>
     </div>
 
     <div class="step slide" data-x="29000" data-y="-1500">
       <q style="margin-top: 0;">加算プログラムの流れ</q>
-      <img width="780" height="570" src="./img/add_table.png" />
+      <pre style=" line-height: 70%;"><code style="font-size: 80%;">0: iconst_1 // 0: 定数1→スタック
+1: istore_2 // 1: スタックの値→ローカル変数2
+2: iload_2  // 2: ローカル変数2→スタック
+3: iconst_2 // 3: 定数2→スタック
+4: iadd     // 4: スタックの値を加算
+5: istore_2 // 5: 加算したスタックの値→ローカル変数2
+6: return   // 6: return unit</code></pre>
+      <img width="780" height="370" src="./img/add_table.png" />
     </div>
 
     <div class="step slide" data-x="30000" data-y="-1500">
