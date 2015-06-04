@@ -585,24 +585,24 @@ object TraitScala {
       <q style="margin-top: 15px; top: 25px; font-size: 20px; line-height: 100%;">逆アセンブル</q>
       <pre style="line-height: 45%;"><code style="font-size: 50%;">0: aload_0
 1: iload_1
-2: iconst_1
+2: iconst_1                          // go(n, 1)の用意
 3: invokespecial #18                 // Method go$1:(II)I
 6: ireturn</code></pre>
       <q style="margin-top: 15px; top: 25px; font-size: 20px; line-height: 100%;">逆アセンブル</q>
       <pre style="line-height: 45%;"><code style="font-size: 50%;">0: iload_1
 1: iconst_0
-2: if_icmpgt     7
+2: if_icmpgt     7  // n <= 0 だと終了
 5: iload_2
 6: ireturn
-7: iload_1
+7: iload_1          // go(n - 1, n * acc)の用意
 8: iconst_1
 9: isub
 10: iload_1
 11: iload_2
 12: imul
 13: istore_2
-14: istore_1
-15: goto          0</code></pre>
+14: istore_1        // go(n - 1, n * acc)の用意
+15: goto          0 // もとに戻る</code></pre>
     </div>
 
     <div class="step slide" data-x="52000" data-y="-1500">
