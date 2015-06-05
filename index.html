@@ -24,33 +24,45 @@
     </div>
 
     <div class="step slide" data-x="0" data-y="-1500">
-      <q><span style="color: red; font-weight: bold;">shigemk2</span> でググってください</q>
-      <img width="300" height="300" src="./img/shigemk2.jpg" />
+      <q>自己紹介</q>
     </div>
 
     <div class="step slide" data-x="1000" data-y="-1500">
-      <q>今日はScala初心者がScalaのクラスファイルについて話します</q>
+      <q style="margin-top: 0px; margin-bottom: 30px; line-height: 0%;"><span style="color: red; font-weight: bold;">shigemk2</span> でググってください</q>
+      <q style="margin-top: 100px; margin-bottom: 30px; line-height: 0%;">某shigemk2ブログ 毎日更新</q>
+      <q style="margin-top: 100px; margin-bottom: 30px; line-height: 0%;">某読書会 主催</q>
+      <q style="margin-top: 100px; margin-bottom: 30px; line-height: 0%;">某社でシェル芸やってる</q>
+      <img width="300" height="300" src="./img/shigemk2.jpg" />
     </div>
 
     <div class="step slide" data-x="2000" data-y="-1500">
+      <q>発表資料です</q>
+      <q style="font-size: 120%; letter-spacing: 3px;">http://shigemk2.github.io/kernelvm11/</q>
+    </div>
+
+    <div class="step slide" data-x="3000" data-y="-1500">
+      <q>今日はScala初心者がScalaのクラスファイルについて話します</q>
+    </div>
+
+    <div class="step slide" data-x="4000" data-y="-1500">
       <q>クラスファイルはScalaやJavaでコンパイルしたあとに出来る中間ファイルのことです</q>
       <q>この本は名著 熱血!アセンブラ入門にわりとインスパイヤされたパチモンです</q>
     </div>
 
-    <div class="step slide" data-x="3000" data-y="-1500">
+    <div class="step slide" data-x="5000" data-y="-1500">
       <q style="position: absolute; top: 0; margin-top: 0; font-size: 35px;">熱血!アセンブラ入門P3より</q>
       <img style="position: absolute; top: 95px; left: 40px;" width="800" height="600" src="./img/binarian10.png" />
     </div>
 
-    <div class="step slide" data-x="4000" data-y="-1500">
+    <div class="step slide" data-x="6000" data-y="-1500">
       <q>Scalaのクラスファイルを<strong>フィーリング</strong>で<strong>なんとなく</strong>読んでみよう</q>
     </div>
 
-    <div class="step slide" data-x="5000" data-y="-1500">
+    <div class="step slide" data-x="7000" data-y="-1500">
       <q>Scalaのクラスファイルを読む前に、まずはJavaのクラスファイルを<strong>なんとなく</strong>読んでみる</q>
     </div>
 
-    <div class="step slide" data-x="6000" data-y="-1500">
+    <div class="step slide" data-x="8000" data-y="-1500">
       <q>JavaのHello, World</q>
       <pre><code>public class HelloWorldJava {
     public static void main(String[] args){
@@ -59,7 +71,7 @@
 }</code></pre>
     </div>
 
-    <div class="step slide" data-x="7000" data-y="-1500">
+    <div class="step slide" data-x="9000" data-y="-1500">
       <q>コンパイルと逆アセンブルのコマンド</q>
       <pre><code>
 javac -g HelloWorldJava.java
@@ -67,7 +79,7 @@ javap -v -p HelloWorldJava
       </code></pre>
     </div>
 
-    <div class="step slide" data-x="8000" data-y="-1500">
+    <div class="step slide" data-x="10000" data-y="-1500">
       <q>コマンドの詳細</q>
       <q style="margin-top: 0; font-size: 80%;">デバッグ情報を付与しつつコンパイル</q>
       <pre><code>
@@ -79,7 +91,7 @@ javap -v -p HelloWorldJava
       </code></pre>
     </div>
 
-    <div class="step slide" data-x="9000" data-y="-1500">
+    <div class="step slide" data-x="11000" data-y="-1500">
       <q>逆アセンブル結果(一部)</q>
       <pre><code style="font-size: 55%; font-weight: bold;">
 Classfile /home/shigemk2/projects/github.com/shigemk2/scala_jvm/HelloWorldJava.class
@@ -94,15 +106,15 @@ public class HelloWorldJava
       </code></pre>
     </div>
 
-    <div class="step slide" data-x="10000" data-y="-1500">
+    <div class="step slide" data-x="12000" data-y="-1500">
       <q>クラスファイルのさっくりとした構成</q>
     </div>
 
-    <div class="step slide" data-x="11000" data-y="-1500">
+    <div class="step slide" data-x="13000" data-y="-1500">
       <q>基本的なところはJavaのクラスファイルもScalaのクラスファイルも変わりません</q>
     </div>
 
-    <div class="step slide" data-x="12000" data-y="-1500">
+    <div class="step slide" data-x="14000" data-y="-1500">
       <q style="margin-top: 100px; font-size: 100%; line-height: 1.5;">JavaのHello, Worldプログラムのクラスファイルを逆アセンブルしたものからざっくりとした構成を見ていきましょう</q>
       <pre><code>public class HelloWorldJava {
     public static void main(String[] args){
@@ -114,7 +126,7 @@ public class HelloWorldJava
 javap -v -p HelloWorldJava</code></pre>
     </div>
 
-    <div class="step slide" data-x="13000" data-y="-1500">
+    <div class="step slide" data-x="15000" data-y="-1500">
       <q style="margin-top: 0;">ざっくりとした構成: 前置き部分</q>
       <pre><code style="font-size: 55%; font-weight: bold;">
 Classfile /home/shigemk2/projects/github.com/shigemk2/scala_jvm/HelloWorldJava.class
@@ -129,7 +141,7 @@ public class HelloWorldJava
       </code></pre>
     </div>
 
-    <div class="step slide" data-x="14000" data-y="-1500">
+    <div class="step slide" data-x="16000" data-y="-1500">
       <q style="position: absolute; top: -90px; left: 50px; font-size: 150%;">ざっくりとした構成: 定数プール</q>
       <pre style="position: absolute; top: 80px; left: 50px; line-height: 34%;"><code style="font-size: 55%; font-weight: bold;">
 Constant pool:
@@ -169,7 +181,7 @@ Constant pool:
       </code></pre>
     </div>
 
-    <div class="step slide" data-x="15000" data-y="-1500">
+    <div class="step slide" data-x="17000" data-y="-1500">
       <q style="margin-top: 0;">ざっくりとした構成: 本体</q>
       <pre><code>{
   public HelloWorldJava();
@@ -182,23 +194,23 @@ Constant pool:
       </code></pre>
     </div>
 
-    <div class="step slide" data-x="16000" data-y="-1500">
+    <div class="step slide" data-x="18000" data-y="-1500">
       <q>前置きとか定数プールとかは無視して、本体のところだけ読んでいきます</q>
     </div>
 
-    <div class="step slide" data-x="17000" data-y="-1500">
+    <div class="step slide" data-x="19000" data-y="-1500">
       <q>まずは</q>
     </div>
 
-    <div class="step slide" data-x="18000" data-y="-1500">
+    <div class="step slide" data-x="20000" data-y="-1500">
       <q>Hello, World</q>
     </div>
 
-    <div class="step slide" data-x="19000" data-y="-1500">
+    <div class="step slide" data-x="21000" data-y="-1500">
       <q>Hello, World JavaとScalaを比べてみよう</q>
     </div>
 
-    <div class="step slide" data-x="20000" data-y="-1500">
+    <div class="step slide" data-x="22000" data-y="-1500">
       <q style="margin-top: 0;">Hello,World本体(Java)</q>
       <pre><code>
 public class HelloWorldJava {
@@ -216,7 +228,7 @@ public class HelloWorldJava {
       </code></pre>
     </div>
 
-    <div class="step slide" data-x="21000" data-y="-1500">
+    <div class="step slide" data-x="23000" data-y="-1500">
       <q style="margin-top: 0;">Hello,World本体(Scala)</q>
       <pre><code>
 object HelloWorldScala {
@@ -234,11 +246,11 @@ object HelloWorldScala {
       </code></pre>
     </div>
 
-    <div class="step slide" data-x="22000" data-y="-1500">
+    <div class="step slide" data-x="24000" data-y="-1500">
       <q>おんなじだ！</q>
     </div>
 
-    <div class="step slide" data-x="23000" data-y="-1500">
+    <div class="step slide" data-x="25000" data-y="-1500">
       <q style="margin-top: 0; font-size: 30px;">FYI: このクラスファイルをJD-GUIでデコンパイルすると</q>
       <pre><code>
 object HelloWorldScala {
@@ -256,7 +268,7 @@ object HelloWorldScala {
       </code></pre>
     </div>
 
-    <div class="step slide" data-x="24000" data-y="-1500">
+    <div class="step slide" data-x="26000" data-y="-1500">
       <q style="margin-top: -5px;">こうなる(コンパイル不可能)</q>
       <pre><code>
 import scala.Predef.;
@@ -275,19 +287,19 @@ public final class HelloWorldScala$ {
       </code></pre>
     </div>
 
-    <div class="step slide" data-x="25000" data-y="-1500">
+    <div class="step slide" data-x="27000" data-y="-1500">
       <q>たぶんJD-GUIがうまくない</q>
     </div>
 
-    <div class="step slide" data-x="26000" data-y="-1500">
+    <div class="step slide" data-x="28000" data-y="-1500">
       <q>続きまして</q>
     </div>
 
-    <div class="step slide" data-x="27000" data-y="-1500">
+    <div class="step slide" data-x="29000" data-y="-1500">
       <q>加算プログラム</q>
     </div>
 
-    <div class="step slide" data-x="28000" data-y="-1500">
+    <div class="step slide" data-x="30000" data-y="-1500">
       <q style="margin-top: 100px;">加算プログラム</q>
       <pre><code>
 object PlusScala {
@@ -299,7 +311,7 @@ object PlusScala {
       </code></pre>
     </div>
 
-    <div class="step slide" data-x="29000" data-y="-1500">
+    <div class="step slide" data-x="31000" data-y="-1500">
       <q style="margin-top: 0; font-size: 100%; line-height:2;">加算プログラムのソースコード</q>
       <pre><code>object PlusScala {
   def main(args: Array[String]) :Unit = {
@@ -317,7 +329,7 @@ object PlusScala {
 6: return   // 6: return unit</code></pre>
     </div>
 
-    <div class="step slide" data-x="30000" data-y="-1500">
+    <div class="step slide" data-x="32000" data-y="-1500">
       <q style="margin-top: 0; font-size: 100%; line-height:2;">加算プログラムのソースコード</q>
       <pre><code>object PlusScala {
   def main(args: Array[String]) :Unit = {
@@ -335,7 +347,7 @@ object PlusScala {
 6: return   // 6: return unit</code></pre>
     </div>
 
-    <div class="step slide" data-x="31000" data-y="-1500">
+    <div class="step slide" data-x="33000" data-y="-1500">
       <q style="margin-top: 0;">加算プログラムの流れ</q>
       <pre style=" line-height: 70%;"><code style="font-size: 80%;">0: iconst_1 // 0: 定数1→スタック
 1: istore_2 // 1: スタックの値→ローカル変数2
@@ -347,7 +359,7 @@ object PlusScala {
       <img width="780" height="370" src="./img/add_table.png" />
     </div>
 
-    <div class="step slide" data-x="32000" data-y="-1500">
+    <div class="step slide" data-x="34000" data-y="-1500">
       <q style="margin-top: 0;">なおJavaでは</q>
       <pre><code>public class PlusJava {
     public static void main(String[] args){
@@ -365,7 +377,7 @@ object PlusScala {
 6: return   // 6: return void</code></pre>
     </div>
 
-    <div class="step slide" data-x="33000" data-y="-1500">
+    <div class="step slide" data-x="35000" data-y="-1500">
       <q style="margin-top: 0;">加算プログラムの流れ Java</q>
       <pre style="line-height: 70%;"><code style="font-size: 80%;">0: iconst_1 // 0: 定数1→スタック
 1: istore_1 // 1: スタックの値→ローカル変数1
@@ -377,7 +389,7 @@ object PlusScala {
       <img width="780" height="370" src="./img/add_table_java.png" />
     </div>
 
-    <div class="step slide" data-x="34000" data-y="-1500">
+    <div class="step slide" data-x="36000" data-y="-1500">
       <q style="margin-top: 0; line-height: 100%; font-size: 30px;">加算プログラム比較 Scala vs Java</q>
       <q style="margin-top: 0; line-height: 100%; font-size: 30px;">Scala</q>
       <img width="780" height="270" src="./img/add_table.png" />
@@ -385,7 +397,7 @@ object PlusScala {
       <img width="780" height="270" src="./img/add_table_java.png" />
     </div>
 
-    <div class="step slide" data-x="35000" data-y="-1500">
+    <div class="step slide" data-x="37000" data-y="-1500">
       <q style="margin: 10px; line-height: 50px;">ポイント</q>
       <ul>
         <li style="margin: 15px; line-height: 60px;">スタックとローカル変数間でデータのやりとりをしている</li>
@@ -395,15 +407,15 @@ object PlusScala {
       </ul>
     </div>
 
-    <div class="step slide" data-x="36000" data-y="-1500">
+    <div class="step slide" data-x="38000" data-y="-1500">
       <q>続きまして</q>
     </div>
 
-    <div class="step slide" data-x="37000" data-y="-1500">
+    <div class="step slide" data-x="39000" data-y="-1500">
       <q>関数呼び出し</q>
     </div>
 
-    <div class="step slide" data-x="38000" data-y="-1500">
+    <div class="step slide" data-x="40000" data-y="-1500">
       <q style="margin-top: -30px; font-size: 90%; line-height:1.5;">関数呼び出し</q>
       <pre style=" left: 30px; line-height: 2;"><code style="font-size: 100%;">object MethodScala {
   def method(a: Int): Int = {
@@ -416,7 +428,7 @@ object PlusScala {
 }</code></pre>
     </div>
 
-    <div class="step slide" data-x="39000" data-y="-1500">
+    <div class="step slide" data-x="41000" data-y="-1500">
       <q style="margin-top: -30px; font-size: 80%; line-height:1.5;">関数呼び出し</q>
       <pre style="left: 30px; line-height: 34%;"><code style="letter-spacing: 6px; font-size: 60%; font-weight: bold;">object MethodScala {
   def method(a: Int): Int = {
@@ -449,7 +461,7 @@ LocalVariableTable:
          2       6     2     a   I</code></pre>
     </div>
 
-    <div class="step slide" data-x="40000" data-y="-1500">
+    <div class="step slide" data-x="42000" data-y="-1500">
       <q style="margin: 10px; line-height: 50px;">ポイント</q>
       <ul>
         <li style="margin: 15px; line-height: 60px;">必要な引数をスタックに積み、ローカル変数に積んでから、メソッドを呼び出す</li>
@@ -458,15 +470,15 @@ LocalVariableTable:
       </ul>
     </div>
 
-    <div class="step slide" data-x="41000" data-y="-1500">
+    <div class="step slide" data-x="43000" data-y="-1500">
       <q>続きまして</q>
     </div>
 
-    <div class="step slide" data-x="42000" data-y="-1500">
+    <div class="step slide" data-x="44000" data-y="-1500">
       <q>関数呼び出しその2: 2つの引数</q>
     </div>
 
-    <div class="step slide" data-x="43000" data-y="-1500">
+    <div class="step slide" data-x="45000" data-y="-1500">
       <q style="margin-top: -30px; font-size: 90%; line-height:1.5;">関数呼び出し</q>
       <pre style=" left: 30px; line-height: 2;"><code style="font-size: 100%;">object Method2Scala {
   def method(a: Int, b: Int): Int = {
@@ -480,7 +492,7 @@ LocalVariableTable:
 }</code></pre>
     </div>
 
-    <div class="step slide" data-x="44000" data-y="-1500">
+    <div class="step slide" data-x="46000" data-y="-1500">
       <q style="margin-top: -30px; font-size: 80%; line-height:1.5;">関数呼び出し</q>
       <pre style="left: 30px; line-height: 20%;"><code style="letter-spacing: 6px; font-size: 50%; font-weight: bold;">object Method2Scala {
   def method(a: Int, b: Int): Int = {
@@ -522,7 +534,7 @@ LocalVariableTable:
          7       7     3     b   I</code></pre>
     </div>
 
-    <div class="step slide" data-x="45000" data-y="-1500">
+    <div class="step slide" data-x="47000" data-y="-1500">
       <q style="margin: 10px; line-height: 50px;">ポイント</q>
       <ul>
         <li style="margin: 15px; line-height: 60px;">必要な引数をスタックに積み、ローカル変数に積んでから、メソッドを呼び出す、という流れは引数が増えても一緒</li>
@@ -531,15 +543,104 @@ LocalVariableTable:
       </ul>
     </div>
 
-    <div class="step slide" data-x="46000" data-y="-1500">
+    <div class="step slide" data-x="48000" data-y="-1500">
       <q>続きまして</q>
     </div>
 
-    <div class="step slide" data-x="47000" data-y="-1500">
+    <div class="step slide" data-x="49000" data-y="-1500">
+      <q>ArrayとList</q>
+    </div>
+
+    <div class="step slide" data-x="50000" data-y="-1500">
+      <q style="margin-top: 0px; font-size: 150%; line-height:1.5;">Array</q>
+      <pre style="left: 30px;"><code style="font-size: 100%; line-height: 1.7;">object ArrayScala {
+  def main(args: Array[String]) :Unit = {
+    Array(1, 2, 3)
+  }
+}</code></pre>
+      <q style="margin-top: 0px; font-size: 150%; line-height:1.5;">List</q>
+      <pre style="left: 30px;"><code style="font-size: 100%; line-height: 1.7;">object ListScala {
+  def main(args: Array[String]) :Unit = {
+    List(1, 2, 3)
+  }
+}</code></pre>
+    </div>
+
+    <div class="step slide" data-x="51000" data-y="-1500">
+      <q style="margin-top: -30px; font-size: 120%; line-height:1.5;">Arrayのコード</q>
+      <pre style="left: 30px; line-height: 75%"><code style="font-size: 80%;">object ArrayScala {
+  def main(args: Array[String]) :Unit = {
+    Array(1, 2, 3)
+  }
+}</code></pre>
+      <q style="margin-top: 0px; font-size: 120%; line-height:1.5;">Arrayの逆アセンブル結果</q>
+      <pre style="left: 30px; line-height: 75%"><code style="font-size: 80%;">0: iconst_3
+1: newarray       int // 配列作成
+3: dup
+4: iconst_0
+5: iconst_1
+6: iastore            // 配列要素0格納
+7: dup
+8: iconst_1
+9: iconst_2
+10: iastore           // 配列要素1格納
+11: dup
+12: iconst_2
+13: iconst_3
+14: iastore           // 配列要素2格納
+15: pop
+16: return</code></pre>
+    </div>
+
+    <div class="step slide" data-x="52000" data-y="-1500">
+      <q style="margin-top: -30px; font-size: 80%; line-height:1.5;">Listのコード</q>
+      <pre style=" left: 30px; line-height: 60%;"><code style="font-size: 60%;">object ListScala {
+  def main(args: Array[String]) :Unit = {
+    List(1, 2, 3)
+  }
+}</code></pre>
+      <q style="margin-top: 0px; font-size: 80%; line-height:1.5;">Listの逆アセンブル結果</q>
+      <pre style=" left: 30px; line-height: 60%;"><code style="font-size: 60%;">0: getstatic     #19   // Field scala/collection/immutable/List(略)
+3: getstatic     #24   // Field scala/Predef$.MODULE$:Lscala/Predef$;
+6: iconst_3
+7: newarray       int  // 配列作成
+9: dup
+10: iconst_0
+11: iconst_1
+12: iastore            // 配列要素0格納
+13: dup
+14: iconst_1
+15: iconst_2
+16: iastore            // 配列要素1格納
+17: dup
+18: iconst_2
+19: iconst_3
+20: iastore            // 配列要素2格納
+21: invokevirtual #28  // Method scala/Predef$.wrapIntArray(略)
+24: invokevirtual #32  // Method scala/collection/immutable/List$.apply(略)
+27: pop
+28: return</code></pre>
+    </div>
+
+    <div class="step slide" data-x="53000" data-y="-1500">
+      <q style="margin: 10px; line-height: 50px;">ポイント</q>
+      <ul>
+        <li style="margin: 15px; line-height: 60px; font-size: 150%;">配列作成はnewarrayからのiconstしてiastoreの繰り返し</li>
+        <li style="margin: 15px; line-height: 60px; font-size: 150%;">ArrayもListもベースは一緒</li>
+        <li style="margin: 15px; line-height: 60px; font-size: 150%;">Arrayは素の配列</li>
+        <li style="margin: 15px; line-height: 60px; font-size: 150%;">Listはなんかクラスやメソッド呼び出してる</li>
+      </ul>
+    </div>
+
+    <div class="step slide" data-x="54000" data-y="-1500">
+      <q>続きまして</q>
+    </div>
+
+    <div class="step slide" data-x="55000" data-y="-1500">
       <q>Interface vs Trait</q>
     </div>
 
-    <div class="step slide" data-x="48000" data-y="-1500">
+    <div class="step slide" data-x="56000" data-y="-1500">
       <q style="margin-top: -30px; font-size: 80%; line-height:1.5;">Interface</q>
       <pre style="left: 30px; line-height: 60%"><code style="font-weight: bold; font-size: 60%;">interface Interface {
     String method(String a, String b);
@@ -568,7 +669,7 @@ object TraitScala {
 }</code></pre>
     </div>
 
-    <div class="step slide" data-x="49000" data-y="-1500">
+    <div class="step slide" data-x="57000" data-y="-1500">
       <q style="margin-top: -30px; font-size: 22px;">どっちも2つのクラスファイルが出てくるけど、InterfaceとTraitのほうをみます。</q>
       <pre style=" left: 30px; line-height: 60%"><code style="font-size: 60%;">interface Interface {
     String method(String a, String b);
@@ -596,7 +697,7 @@ object TraitScala {
 }</code></pre>
     </div>
 
-    <div class="step slide" data-x="50000" data-y="-1500">
+    <div class="step slide" data-x="58000" data-y="-1500">
       <q style="margin-top: 0px; font-size: 80%; line-height:1.5;">Interface</q>
       <pre style=" left: 30px; line-height: 1.2;"><code style="font-size: 70%;">interface Interface {
     String method(String a, String b);
@@ -617,26 +718,26 @@ object TraitScala {
 }</code></pre>
     </div>
 
-    <div class="step slide" data-x="51000" data-y="-1500">
+    <div class="step slide" data-x="59000" data-y="-1500">
       <q style="margin: 10px; line-height: 50px;">ポイント</q>
       <ul>
         <li style="margin: 15px; line-height: 60px; font-size: 150%;">TraitもInterfaceもバイトコード的には中身がいっしょ</li>
       </ul>
     </div>
 
-    <div class="step slide" data-x="52000" data-y="-1500">
+    <div class="step slide" data-x="60000" data-y="-1500">
       <q>続きまして</q>
     </div>
 
-    <div class="step slide" data-x="53000" data-y="-1500">
+    <div class="step slide" data-x="61000" data-y="-1500">
       <q>このあたりからコードが長くなって読みづらくなっております</q>
     </div>
 
-    <div class="step slide" data-x="54000" data-y="-1500">
+    <div class="step slide" data-x="62000" data-y="-1500">
       <q>再帰</q>
     </div>
 
-    <div class="step slide" data-x="55000" data-y="-1500">
+    <div class="step slide" data-x="63000" data-y="-1500">
       <q style="margin-top: 0;">再帰</q>
       <pre style=" left: 30px; line-height: 1.5;"><code style="font-size: 100%;">object FactorialScala {
   def fact(n: Int): Int = n match {
@@ -650,7 +751,7 @@ object TraitScala {
 }</code></pre>
     </div>
 
-    <div class="step slide" data-x="56000" data-y="-1500">
+    <div class="step slide" data-x="64000" data-y="-1500">
       <q style="margin-top: -40px; font-size: 20px; line-height: 30px;">コード</q>
       <pre style="margin-top: -5px; left: 30px; line-height: 1;"><code style="font-size: 50%;">def fact(n: Int): Int = n match {
     case 0 => 1
@@ -685,7 +786,7 @@ object TraitScala {
 50: ireturn</code></pre>
     </div>
 
-    <div class="step slide" data-x="57000" data-y="-1500">
+    <div class="step slide" data-x="65000" data-y="-1500">
       <q style="margin: 10px; line-height: 50px;">ポイント</q>
       <ul>
         <li style="margin: 15px; line-height: 60px;">Javaのswitch文プログラムはtableswitchに逆アセンブル</li>
@@ -694,15 +795,15 @@ object TraitScala {
       </ul>
     </div>
 
-    <div class="step slide" data-x="58000" data-y="-1500">
+    <div class="step slide" data-x="66000" data-y="-1500">
       <q>続きまして</q>
     </div>
 
-    <div class="step slide" data-x="59000" data-y="-1500">
+    <div class="step slide" data-x="67000" data-y="-1500">
       <q>末尾再帰</q>
     </div>
 
-    <div class="step slide" data-x="60000" data-y="-1500">
+    <div class="step slide" data-x="68000" data-y="-1500">
       <q style="margin-top: 0;">末尾再帰</q>
       <pre style=" left: 30px; line-height: 1.5;"><code style="font-size: 100%;">object FactorialTAScala {
   def fact(n: Int): Int = {
@@ -718,7 +819,7 @@ object TraitScala {
 }</code></pre>
     </div>
 
-    <div class="step slide" data-x="61000" data-y="-1500">
+    <div class="step slide" data-x="69000" data-y="-1500">
       <q style="margin-top: -40px; font-size: 20px; line-height: 30px;">コード</q>
       <pre style="margin-top: -5px; left: 30px; line-height: 30%;"><code style="font-size: 50%;">object FactorialTAScala {
   def fact(n: Int): Int = {
@@ -755,7 +856,7 @@ object TraitScala {
 15: goto          0</code></pre>
     </div>
 
-    <div class="step slide" data-x="62000" data-y="-1500">
+    <div class="step slide" data-x="70000" data-y="-1500">
       <q style="margin-top: -40px; font-size: 20px; line-height: 30px;">コード</q>
       <pre style="margin-top: -5px; left: 30px; line-height: 30%;"><code style="font-size: 50%;">object FactorialTAScala {
   def fact(n: Int): Int = {
@@ -792,7 +893,7 @@ object TraitScala {
 15: goto          0 // もとに戻る</code></pre>
     </div>
 
-    <div class="step slide" data-x="63000" data-y="-1500">
+    <div class="step slide" data-x="71000" data-y="-1500">
       <q style="margin: 10px; line-height: 50px;">ポイント</q>
       <ul>
         <li style="margin: 15px; line-height: 60px;">普通の再帰と比べてアセンブルも短め</li>
@@ -800,15 +901,15 @@ object TraitScala {
       </ul>
     </div>
 
-    <div class="step slide" data-x="64000" data-y="-1500">
+    <div class="step slide" data-x="72000" data-y="-1500">
       <q>続きまして</q>
     </div>
 
-    <div class="step slide" data-x="65000" data-y="-1500">
+    <div class="step slide" data-x="73000" data-y="-1500">
       <q>まとめ</q>
     </div>
 
-    <div class="step slide" data-x="66000" data-y="-1500">
+    <div class="step slide" data-x="74000" data-y="-1500">
       <q style="margin: 10px; line-height: 50px;">まとめ</q>
       <ul>
         <li style="margin: 15px; line-height: 60px;">JavaとScalaはなんとなく似ているが、メソッドまわりで微妙に違うことを思い…出した</li>
@@ -817,15 +918,15 @@ object TraitScala {
       </ul>
     </div>
 
-    <div class="step slide" data-x="67000" data-y="-1500">
+    <div class="step slide" data-x="75000" data-y="-1500">
       <q>最後に</q>
     </div>
 
-    <div class="step slide" data-x="68000" data-y="-1500">
+    <div class="step slide" data-x="76000" data-y="-1500">
       <q>なんかマサカリ下さい</q>
     </div>
 
-    <div class="step slide" data-x="69000" data-y="-1500">
+    <div class="step slide" data-x="77000" data-y="-1500">
       <q>おしまい</q>
     </div>
 </div>
