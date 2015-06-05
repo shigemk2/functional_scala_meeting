@@ -1,97 +1,199 @@
-      <table border="1" width="700" height="200">
-	    <tr>
-		  <td colspan="2">　</td>
-		  <td>開始</td>
-		  <td>→</td>
-		  <td>→</td>
-		  <td>→</td>
-		  <td>→</td>
-		  <td>→</td>
-		  <td>→</td>
-	    </tr>
-	    <tr>
-		  <td colspan="2">命令</td>
-		  <td></td>
-		  <td>iconst_1</td>
-		  <td>istore_2</td>
-		  <td>iload_2</td>
-		  <td>iconst_2</td>
-		  <td>iadd</td>
-		  <td>istore_2</td>
-	    </tr>
-	    <tr>
-		  <td rowspan="3">命令実行後の<br>
-		    <a href="#stack_area">スタック</a><br>
-		    の状態</td>
-		  <td>　</td>
-		  <td>　</td>
-		  <td>　</td>
-		  <td>　</td>
-		  <td>　</td>
-		  <td>　</td>
-		  <td>　</td>
-		  <td>　</td>
-	    </tr>
-	    <tr>
-		  <td>　</td>
-		  <td>　</td>
-		  <td>　</td>
-		  <td>　</td>
-		  <td>　</td>
-		  <td bgcolor="#00FFFF">2</td>
-		  <td>　</td>
-		  <td>　</td>
-	    </tr>
-	    <tr>
-		  <td>　</td>
-		  <td>　</td>
-		  <td bgcolor="#00FFFF">1</td>
-		  <td>　</td>
-		  <td bgcolor="#00FFFF">1</td>
-		  <td bgcolor="#00FFFF">1</td>
-		  <td bgcolor="#00FFFF">3</td>
-		  <td>　</td>
-	    </tr>
-	    <tr>
-		  <td rowspan="4">命令実行後の<br>
-		    <a href="#local_area">ローカル変数</a><br>
-		    の状態</td>
-		  <td>3</td>
-		  <td bgcolor="#00FF00">　</td>
-		  <td bgcolor="#00FF00">　</td>
-		  <td bgcolor="#00FF00">　</td>
-		  <td bgcolor="#00FF00">　</td>
-		  <td bgcolor="#00FF00">　</td>
-		  <td bgcolor="#00FF00">　</td>
-		  <td bgcolor="#00FF00">　</td>
-	    </tr>
-	    <tr>
-		  <td>2</td>
-		  <td bgcolor="#00FF00">　</td>
-		  <td bgcolor="#00FF00">　</td>
-		  <td bgcolor="#00FF00">1</td>
-		  <td bgcolor="#00FF00">1</td>
-		  <td bgcolor="#00FF00">1</td>
-		  <td bgcolor="#00FF00">1</td>
-		  <td bgcolor="#00FF00">3</td>
-	    </tr>
-	    <tr>
-		  <td>1</td>
-		  <td bgcolor="#00FF00">args</td>
-		  <td bgcolor="#00FF00">args</td>
-		  <td bgcolor="#00FF00">args</td>
-		  <td bgcolor="#00FF00">args</td>
-		  <td bgcolor="#00FF00">args</td>
-		  <td bgcolor="#00FF00">args</td>
-		  <td bgcolor="#00FF00">args</td>
-	    </tr>
-	    <tr>
-		  <td>0</td>
-		  <td bgcolor="#00FF00">this</td>
-		  <td bgcolor="#00FF00">this</td>
-		  <td bgcolor="#00FF00">this</td>
-		  <td bgcolor="#00FF00">this</td>
-		  <td bgcolor="#00FF00">this</td>
-		  <td bgcolor="#00FF00">this</td>
-		  <td bgcolor="#00FF00">this</td>
-	    </tr>
+<p>Scala</p>
+<table border="1" width="700" height="200">
+  <tr>
+	<td colspan="2">　</td>
+	<td>開始</td>
+	<td>→</td>
+	<td>→</td>
+	<td>→</td>
+	<td>→</td>
+	<td>→</td>
+	<td>→</td>
+  </tr>
+  <tr>
+	<td colspan="2">命令</td>
+	<td></td>
+	<td>iconst_1</td>
+	<td>istore_2</td>
+	<td>iload_2</td>
+	<td>iconst_2</td>
+	<td>iadd</td>
+	<td>istore_2</td>
+  </tr>
+  <tr>
+	<td rowspan="3">命令実行後の<br>
+	  <a href="#stack_area">スタック</a><br>
+	  の状態</td>
+	<td>　</td>
+	<td>　</td>
+	<td>　</td>
+	<td>　</td>
+	<td>　</td>
+	<td>　</td>
+	<td>　</td>
+	<td>　</td>
+  </tr>
+  <tr>
+	<td>　</td>
+	<td>　</td>
+	<td>　</td>
+	<td>　</td>
+	<td>　</td>
+	<td bgcolor="#00FFFF">2</td>
+	<td>　</td>
+	<td>　</td>
+  </tr>
+  <tr>
+	<td>　</td>
+	<td>　</td>
+	<td bgcolor="#00FFFF">1</td>
+	<td>　</td>
+	<td bgcolor="#00FFFF">1</td>
+	<td bgcolor="#00FFFF">1</td>
+	<td bgcolor="#00FFFF">3</td>
+	<td>　</td>
+  </tr>
+  <tr>
+	<td rowspan="4">命令実行後の<br>
+	  <a href="#local_area">ローカル変数</a><br>
+	  の状態</td>
+	<td>3</td>
+	<td bgcolor="#00FF00">　</td>
+	<td bgcolor="#00FF00">　</td>
+	<td bgcolor="#00FF00">　</td>
+	<td bgcolor="#00FF00">　</td>
+	<td bgcolor="#00FF00">　</td>
+	<td bgcolor="#00FF00">　</td>
+	<td bgcolor="#00FF00">　</td>
+  </tr>
+  <tr>
+	<td>2</td>
+	<td bgcolor="#00FF00">　</td>
+	<td bgcolor="#00FF00">　</td>
+	<td bgcolor="#00FF00">1</td>
+	<td bgcolor="#00FF00">1</td>
+	<td bgcolor="#00FF00">1</td>
+	<td bgcolor="#00FF00">1</td>
+	<td bgcolor="#00FF00">3</td>
+  </tr>
+  <tr>
+	<td>1</td>
+	<td bgcolor="#00FF00">args</td>
+	<td bgcolor="#00FF00">args</td>
+	<td bgcolor="#00FF00">args</td>
+	<td bgcolor="#00FF00">args</td>
+	<td bgcolor="#00FF00">args</td>
+	<td bgcolor="#00FF00">args</td>
+	<td bgcolor="#00FF00">args</td>
+  </tr>
+  <tr>
+	<td>0</td>
+	<td bgcolor="#00FF00">this</td>
+	<td bgcolor="#00FF00">this</td>
+	<td bgcolor="#00FF00">this</td>
+	<td bgcolor="#00FF00">this</td>
+	<td bgcolor="#00FF00">this</td>
+	<td bgcolor="#00FF00">this</td>
+	<td bgcolor="#00FF00">this</td>
+  </tr>
+</table>
+
+<p>Java</p>
+<table border="1" width="700" height="200">
+  <tr>
+	<td colspan="2">　</td>
+	<td>開始</td>
+	<td>→</td>
+	<td>→</td>
+	<td>→</td>
+	<td>→</td>
+	<td>→</td>
+	<td>→</td>
+  </tr>
+  <tr>
+	<td colspan="2">命令</td>
+	<td></td>
+	<td>iconst_1</td>
+	<td>istore_1</td>
+	<td>iload_1</td>
+	<td>iconst_2</td>
+	<td>iadd</td>
+	<td>istore_1</td>
+  </tr>
+  <tr>
+	<td rowspan="3">命令実行後の<br>
+	  <a href="#stack_area">スタック</a><br>
+	  の状態</td>
+	<td>　</td>
+	<td>　</td>
+	<td>　</td>
+	<td>　</td>
+	<td>　</td>
+	<td>　</td>
+	<td>　</td>
+	<td>　</td>
+  </tr>
+  <tr>
+	<td>　</td>
+	<td>　</td>
+	<td>　</td>
+	<td>　</td>
+	<td>　</td>
+	<td bgcolor="#00FFFF">2</td>
+	<td>　</td>
+	<td>　</td>
+  </tr>
+  <tr>
+	<td>　</td>
+	<td>　</td>
+	<td bgcolor="#00FFFF">1</td>
+	<td>　</td>
+	<td bgcolor="#00FFFF">1</td>
+	<td bgcolor="#00FFFF">1</td>
+	<td bgcolor="#00FFFF">3</td>
+	<td>　</td>
+  </tr>
+  <tr>
+	<td rowspan="4">命令実行後の<br>
+	  <a href="#local_area">ローカル変数</a><br>
+	  の状態</td>
+	<td>3</td>
+	<td bgcolor="#00FF00">　</td>
+	<td bgcolor="#00FF00">　</td>
+	<td bgcolor="#00FF00">　</td>
+	<td bgcolor="#00FF00">　</td>
+	<td bgcolor="#00FF00">　</td>
+	<td bgcolor="#00FF00">　</td>
+	<td bgcolor="#00FF00">　</td>
+  </tr>
+  <tr>
+	<td>2</td>
+	<td bgcolor="#00FF00">　</td>
+	<td bgcolor="#00FF00">　</td>
+	<td bgcolor="#00FF00">　</td>
+	<td bgcolor="#00FF00">　</td>
+	<td bgcolor="#00FF00">　</td>
+	<td bgcolor="#00FF00">　</td>
+	<td bgcolor="#00FF00">　</td>
+  </tr>
+  <tr>
+	<td>1</td>
+	<td bgcolor="#00FF00">　</td>
+	<td bgcolor="#00FF00">　</td>
+	<td bgcolor="#00FF00">1</td>
+	<td bgcolor="#00FF00">1</td>
+	<td bgcolor="#00FF00">1</td>
+	<td bgcolor="#00FF00">1</td>
+	<td bgcolor="#00FF00">3</td>
+  </tr>
+  <tr>
+	<td>0</td>
+	<td bgcolor="#00FF00">this</td>
+	<td bgcolor="#00FF00">this</td>
+	<td bgcolor="#00FF00">this</td>
+	<td bgcolor="#00FF00">this</td>
+	<td bgcolor="#00FF00">this</td>
+	<td bgcolor="#00FF00">this</td>
+	<td bgcolor="#00FF00">this</td>
+  </tr>
+</table>
