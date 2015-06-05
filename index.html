@@ -52,8 +52,7 @@
 
     <div class="step slide" data-x="6000" data-y="-1500">
       <q>JavaのHello, World</q>
-      <pre><code>
-public class HelloWorldJava {
+      <pre><code>public class HelloWorldJava {
     public static void main(String[] args){
         System.out.println("Hello, world.");
     }
@@ -69,6 +68,7 @@ javap -v -p HelloWorldJava
     </div>
 
     <div class="step slide" data-x="8000" data-y="-1500">
+      <q>コマンドの詳細</q>
       <q style="margin-top: 0; font-size: 80%;">デバッグ情報を付与しつつコンパイル</q>
       <pre><code>
 javac -g HelloWorldJava.java
@@ -103,7 +103,7 @@ public class HelloWorldJava
     </div>
 
     <div class="step slide" data-x="12000" data-y="-1500">
-      <q style="margin-top: 0; font-size: 100%; line-height: 1.5;">JavaのHello, Worldプログラムのクラスファイルを逆アセンブルしたものからざっくりとした構成を見ていきましょう</q>
+      <q style="margin-top: 100px; font-size: 100%; line-height: 1.5;">JavaのHello, Worldプログラムのクラスファイルを逆アセンブルしたものからざっくりとした構成を見ていきましょう</q>
       <pre><code>public class HelloWorldJava {
     public static void main(String[] args){
         System.out.println("Hello, world.");
@@ -239,17 +239,25 @@ object HelloWorldScala {
     </div>
 
     <div class="step slide" data-x="23000" data-y="-1500">
-      <q style="margin-top: 0; font-size: 34px;">FYI: もとのコードをJD-GUIでデコンパイルすると</q>
+      <q style="margin-top: 0; font-size: 30px;">FYI: このクラスファイルをJD-GUIでデコンパイルすると</q>
       <pre><code>
 object HelloWorldScala {
   def main(args: Array[String]) :Unit = {
     println("hello, world")
   }
-}</code></pre>
+}
+      </code></pre>
+      <q style="margin-top: 0; font-size: 30px;">逆アセンブル結果</q>
+      <pre><code>
+0: getstatic     #19 // クラスフィールド読み込み
+3: ldc           #21 // 文字列読み込み
+5: invokevirtual #25 // printlnメソッド呼び出し
+8: return            // return Unit
+      </code></pre>
     </div>
 
     <div class="step slide" data-x="24000" data-y="-1500">
-      <q style="margin-top: 0;">こうなる(コンパイル不可能)</q>
+      <q style="margin-top: -5px;">こうなる(コンパイル不可能)</q>
       <pre><code>
 import scala.Predef.;
 public final class HelloWorldScala$ {
@@ -263,7 +271,8 @@ public final class HelloWorldScala$ {
   private HelloWorldScala$() {
     MODULE$ = this;
   }
-}</code></pre>
+}
+      </code></pre>
     </div>
 
     <div class="step slide" data-x="25000" data-y="-1500">
@@ -279,14 +288,15 @@ public final class HelloWorldScala$ {
     </div>
 
     <div class="step slide" data-x="28000" data-y="-1500">
-      <q style="margin-top: 0;">加算プログラム</q>
+      <q style="margin-top: 100px;">加算プログラム</q>
       <pre><code>
 object PlusScala {
   def main(args: Array[String]) :Unit = {
     var a = 1
     a = a + 2
   }
-}</code></pre>
+}
+      </code></pre>
     </div>
 
     <div class="step slide" data-x="29000" data-y="-1500">
