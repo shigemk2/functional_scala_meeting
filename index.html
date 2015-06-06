@@ -319,7 +319,7 @@ object PlusScala {
     a = a + 2
   }
 }</code></pre>
-      <q style="margin-top: 0; font-size: 100%; line-height:2;">逆アセンブル結果</q>
+      <q style="margin-top: 0; font-size: 100%; line-height:2;">逆アセンブル結果(var a = 1 →a = a + 2)</q>
       <pre><code style="font-size: 80%;">0: iconst_1 // 0: 定数1→スタック
 1: istore_2 // 1: スタックの値→ローカル変数2
 2: iload_2  // 2: ローカル変数2→スタック
@@ -337,7 +337,7 @@ object PlusScala {
     a = a + 2
   }
 }</code></pre>
-      <q style="margin-top: 0; font-size: 100%; line-height:2; color: red;">この部分は何をしているのだろうか。</q>
+      <q style="margin-top: 0; font-size: 100%; line-height:2; color: red;">このバイトコードは何をしているのだろうか。</q>
       <pre><code style="font-size: 80%;">0: iconst_1 // 0: 定数1→スタック
 1: istore_2 // 1: スタックの値→ローカル変数2
 2: iload_2  // 2: ローカル変数2→スタック
