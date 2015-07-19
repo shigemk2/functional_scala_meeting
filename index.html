@@ -36,9 +36,9 @@
     </div>
 
     <div class="step slide" data-x="2000" data-y="-1500">
-      <q style="font-size: 120%; line-height: 1;">発表資料です</q>
+      <q style="font-size: 120%; line-height: 0;">発表資料です</q>
       <q style="font-size: 120%; letter-spacing: 3px;">http://shigemk2.github.io/functional_scala_meeting/</q>
-      <q style="font-size: 120%; line-height: 1;">ソースコードです</q>
+      <q style="font-size: 120%; line-height: 0;">ソースコードです</q>
       <q style="font-size: 120%; letter-spacing: 3px;">http://shigemk2.github.io/scala_jvm/</q>
     </div>
 
@@ -57,8 +57,8 @@
     </div>
 
     <div class="step slide" data-x="5000" data-y="-1500">
-      <q style="margin-top: 0px; margin-bottom: 30px; line-height: 1;">クラスファイルはScalaやJavaでコンパイルしたあとに出来る中間ファイルのことです</q>
-      <q style="margin-top: 32px; margin-bottom: 30px; line-height: 1;">この本は名著 熱血!アセンブラ入門にわりとインスパイヤされたパチモンです</q>
+      <q style="font-size: 45px; margin-top: 0px; margin-bottom: 30px; line-height: 1;">クラスファイルはScalaやJavaでコンパイルしたあとに出来る中間ファイルのことです</q>
+      <q style="font-size: 45px; margin-top: 32px; margin-bottom: 30px; line-height: 1;">この本は名著 熱血!アセンブラ入門にわりとインスパイヤされたパチモンです</q>
       <img width="300" height="300" src="./img/hotasm.jpg" />
     </div>
 
@@ -561,99 +561,10 @@ LocalVariableTable:
     </div>
 
     <div class="step slide" data-x="50000" data-y="-1500">
-      <q>ArrayとList</q>
-    </div>
-
-    <div class="step slide" data-x="51000" data-y="-1500">
-      <q style="margin-top: 0px; font-size: 150%; line-height:1.5;">Array</q>
-      <pre style="left: 30px;"><code style="font-size: 100%; line-height: 1.7;">object ArrayScala {
-  def main(args: Array[String]) :Unit = {
-    Array(1, 2, 3)
-  }
-}</code></pre>
-      <q style="margin-top: 0px; font-size: 150%; line-height:1.5;">List</q>
-      <pre style="left: 30px;"><code style="font-size: 100%; line-height: 1.7;">object ListScala {
-  def main(args: Array[String]) :Unit = {
-    List(1, 2, 3)
-  }
-}</code></pre>
-    </div>
-
-    <div class="step slide" data-x="52000" data-y="-1500">
-      <q style="margin-top: -30px; font-size: 120%; line-height:1.5;">Arrayのコード</q>
-      <pre style="left: 30px; line-height: 75%"><code style="font-size: 80%;">object ArrayScala {
-  def main(args: Array[String]) :Unit = {
-    Array(1, 2, 3)
-  }
-}</code></pre>
-      <q style="margin-top: 0px; font-size: 120%; line-height:1.5;">Arrayの逆アセンブル結果</q>
-      <pre style="left: 30px; line-height: 75%"><code style="font-size: 80%;">0: iconst_3
-1: newarray       int // 配列作成
-3: dup
-4: iconst_0
-5: iconst_1
-6: iastore            // 配列要素0格納
-7: dup
-8: iconst_1
-9: iconst_2
-10: iastore           // 配列要素1格納
-11: dup
-12: iconst_2
-13: iconst_3
-14: iastore           // 配列要素2格納
-15: pop
-16: return</code></pre>
-    </div>
-
-    <div class="step slide" data-x="53000" data-y="-1500">
-      <q style="margin-top: -30px; font-size: 80%; line-height:1.5;">Listのコード</q>
-      <pre style=" left: 30px; line-height: 60%;"><code style="font-size: 60%;">object ListScala {
-  def main(args: Array[String]) :Unit = {
-    List(1, 2, 3)
-  }
-}</code></pre>
-      <q style="margin-top: 0px; font-size: 80%; line-height:1.5;">Listの逆アセンブル結果</q>
-      <pre style=" left: 30px; line-height: 60%;"><code style="font-size: 60%;">0: getstatic     #19   // Field scala/collection/immutable/List(略)
-3: getstatic     #24   // Field scala/Predef$.MODULE$:Lscala/Predef$;
-6: iconst_3
-7: newarray       int  // 配列作成
-9: dup
-10: iconst_0
-11: iconst_1
-12: iastore            // 配列要素0格納
-13: dup
-14: iconst_1
-15: iconst_2
-16: iastore            // 配列要素1格納
-17: dup
-18: iconst_2
-19: iconst_3
-20: iastore            // 配列要素2格納
-21: invokevirtual #28  // Method scala/Predef$.wrapIntArray(略)
-24: invokevirtual #32  // Method scala/collection/immutable/List$.apply(略)
-27: pop
-28: return</code></pre>
-    </div>
-
-    <div class="step slide" data-x="54000" data-y="-1500">
-      <q style="margin: 10px; line-height: 50px;">ポイント</q>
-      <ul>
-        <li style="margin: 15px; line-height: 60px; font-size: 150%;">配列作成はnewarrayからのiconstしてiastoreの繰り返し</li>
-        <li style="margin: 15px; line-height: 60px; font-size: 150%;">ArrayもListもベースは一緒</li>
-        <li style="margin: 15px; line-height: 60px; font-size: 150%;">Arrayは素の配列</li>
-        <li style="margin: 15px; line-height: 60px; font-size: 150%;">Listはなんかクラスやメソッド呼び出してる</li>
-      </ul>
-    </div>
-
-    <div class="step slide" data-x="55000" data-y="-1500">
-      <q>続きまして</q>
-    </div>
-
-    <div class="step slide" data-x="56000" data-y="-1500">
       <q>Interface vs Trait</q>
     </div>
 
-    <div class="step slide" data-x="57000" data-y="-1500">
+    <div class="step slide" data-x="51000" data-y="-1500">
       <q style="margin-top: -30px; font-size: 80%; line-height:1.5;">Interface</q>
       <pre style="left: 30px; line-height: 60%"><code style="font-weight: bold; font-size: 60%;">interface Interface {
     String method(String a, String b);
@@ -682,7 +593,7 @@ object TraitScala {
 }</code></pre>
     </div>
 
-    <div class="step slide" data-x="58000" data-y="-1500">
+    <div class="step slide" data-x="52000" data-y="-1500">
       <q style="margin-top: -30px; font-size: 22px;">どっちも2つのクラスファイルが出てくるけど、InterfaceとTraitのほうをみます。</q>
       <pre style=" left: 30px; line-height: 60%"><code style="font-size: 60%;">interface Interface {
     String method(String a, String b);
@@ -710,7 +621,7 @@ object TraitScala {
 }</code></pre>
     </div>
 
-    <div class="step slide" data-x="59000" data-y="-1500">
+    <div class="step slide" data-x="53000" data-y="-1500">
       <q style="margin-top: 0px; font-size: 80%; line-height:1.5;">Interface</q>
       <pre style=" left: 30px; line-height: 1.2;"><code style="font-size: 70%;">interface Interface {
     String method(String a, String b);
@@ -731,26 +642,26 @@ object TraitScala {
 }</code></pre>
     </div>
 
-    <div class="step slide" data-x="60000" data-y="-1500">
+    <div class="step slide" data-x="54000" data-y="-1500">
       <q style="margin: 10px; line-height: 50px;">ポイント</q>
       <ul>
         <li style="margin: 15px; line-height: 60px; font-size: 150%;">TraitもInterfaceもバイトコード的には中身がいっしょ</li>
       </ul>
     </div>
 
-    <div class="step slide" data-x="61000" data-y="-1500">
+    <div class="step slide" data-x="55000" data-y="-1500">
       <q>続きまして</q>
     </div>
 
-    <div class="step slide" data-x="62000" data-y="-1500">
+    <div class="step slide" data-x="56000" data-y="-1500">
       <q>このあたりからコードが長くなって読みづらくなっております</q>
     </div>
 
-    <div class="step slide" data-x="63000" data-y="-1500">
+    <div class="step slide" data-x="57000" data-y="-1500">
       <q>再帰</q>
     </div>
 
-    <div class="step slide" data-x="64000" data-y="-1500">
+    <div class="step slide" data-x="58000" data-y="-1500">
       <q style="margin-top: 0;">再帰</q>
       <pre style=" left: 30px; line-height: 1.5;"><code style="font-size: 100%;">object FactorialScala {
   def fact(n: Int): Int = n match {
@@ -764,7 +675,7 @@ object TraitScala {
 }</code></pre>
     </div>
 
-    <div class="step slide" data-x="65000" data-y="-1500">
+    <div class="step slide" data-x="59000" data-y="-1500">
       <q style="margin-top: -40px; font-size: 20px; line-height: 30px;">コード</q>
       <pre style="margin-top: -5px; left: 30px; line-height: 1;"><code style="font-size: 50%;">def fact(n: Int): Int = n match {
     case 0 => 1
@@ -799,7 +710,7 @@ object TraitScala {
 50: ireturn</code></pre>
     </div>
 
-    <div class="step slide" data-x="66000" data-y="-1500">
+    <div class="step slide" data-x="60000" data-y="-1500">
       <q style="margin: 10px; line-height: 50px;">ポイント</q>
       <ul>
         <li style="margin: 15px; line-height: 60px;">Javaのswitch文プログラムはtableswitchに逆アセンブル</li>
@@ -808,15 +719,15 @@ object TraitScala {
       </ul>
     </div>
 
-    <div class="step slide" data-x="67000" data-y="-1500">
+    <div class="step slide" data-x="61000" data-y="-1500">
       <q>続きまして</q>
     </div>
 
-    <div class="step slide" data-x="68000" data-y="-1500">
+    <div class="step slide" data-x="62000" data-y="-1500">
       <q>末尾再帰</q>
     </div>
 
-    <div class="step slide" data-x="69000" data-y="-1500">
+    <div class="step slide" data-x="63000" data-y="-1500">
       <q style="margin-top: 0;">末尾再帰</q>
       <pre style=" left: 30px; line-height: 1.5;"><code style="font-size: 100%;">object FactorialTAScala {
   def fact(n: Int): Int = {
@@ -832,7 +743,7 @@ object TraitScala {
 }</code></pre>
     </div>
 
-    <div class="step slide" data-x="70000" data-y="-1500">
+    <div class="step slide" data-x="64000" data-y="-1500">
       <q style="margin-top: -40px; font-size: 20px; line-height: 30px;">コード</q>
       <pre style="margin-top: -5px; left: 30px; line-height: 30%;"><code style="font-size: 50%;">object FactorialTAScala {
   def fact(n: Int): Int = {
@@ -869,7 +780,7 @@ object TraitScala {
 15: goto          0</code></pre>
     </div>
 
-    <div class="step slide" data-x="71000" data-y="-1500">
+    <div class="step slide" data-x="65000" data-y="-1500">
       <q style="margin-top: -40px; font-size: 20px; line-height: 30px;">コード</q>
       <pre style="margin-top: -5px; left: 30px; line-height: 30%;"><code style="font-size: 50%;">object FactorialTAScala {
   def fact(n: Int): Int = {
@@ -906,11 +817,101 @@ object TraitScala {
 15: goto          0 // もとに戻る</code></pre>
     </div>
 
-    <div class="step slide" data-x="72000" data-y="-1500">
+    <div class="step slide" data-x="66000" data-y="-1500">
       <q style="margin: 10px; line-height: 50px;">ポイント</q>
       <ul>
         <li style="margin: 15px; line-height: 60px;">普通の再帰と比べてアセンブルも短め</li>
         <li style="margin: 15px; line-height: 60px;">goを呼び出すたびにスタックのデータをローカル変数に引っ込めているので、fact(巨大数)でも<strong>スタックオーバーフローにならない</strong></li>
+      </ul>
+    </div>
+
+
+    <div class="step slide" data-x="67000" data-y="-1500">
+      <q>続きまして</q>
+    </div>
+
+    <div class="step slide" data-x="68000" data-y="-1500">
+      <q>ArrayとList</q>
+    </div>
+
+    <div class="step slide" data-x="69000" data-y="-1500">
+      <q style="margin-top: 0px; font-size: 150%; line-height:1.5;">Array</q>
+      <pre style="left: 30px;"><code style="font-size: 100%; line-height: 1.7;">object ArrayScala {
+  def main(args: Array[String]) :Unit = {
+    Array(1, 2, 3)
+  }
+}</code></pre>
+      <q style="margin-top: 0px; font-size: 150%; line-height:1.5;">List</q>
+      <pre style="left: 30px;"><code style="font-size: 100%; line-height: 1.7;">object ListScala {
+  def main(args: Array[String]) :Unit = {
+    List(1, 2, 3)
+  }
+}</code></pre>
+    </div>
+
+    <div class="step slide" data-x="70000" data-y="-1500">
+      <q style="margin-top: -30px; font-size: 120%; line-height:1.5;">Arrayのコード</q>
+      <pre style="left: 30px; line-height: 75%"><code style="font-size: 80%;">object ArrayScala {
+  def main(args: Array[String]) :Unit = {
+    Array(1, 2, 3)
+  }
+}</code></pre>
+      <q style="margin-top: 0px; font-size: 120%; line-height:1.5;">Arrayの逆アセンブル結果</q>
+      <pre style="left: 30px; line-height: 75%"><code style="font-size: 80%;">0: iconst_3
+1: newarray       int // 配列作成
+3: dup
+4: iconst_0
+5: iconst_1
+6: iastore            // 配列要素0格納
+7: dup
+8: iconst_1
+9: iconst_2
+10: iastore           // 配列要素1格納
+11: dup
+12: iconst_2
+13: iconst_3
+14: iastore           // 配列要素2格納
+15: pop
+16: return</code></pre>
+    </div>
+
+    <div class="step slide" data-x="71000" data-y="-1500">
+      <q style="margin-top: -30px; font-size: 80%; line-height:1.5;">Listのコード</q>
+      <pre style=" left: 30px; line-height: 60%;"><code style="font-size: 60%;">object ListScala {
+  def main(args: Array[String]) :Unit = {
+    List(1, 2, 3)
+  }
+}</code></pre>
+      <q style="margin-top: 0px; font-size: 80%; line-height:1.5;">Listの逆アセンブル結果</q>
+      <pre style=" left: 30px; line-height: 60%;"><code style="font-size: 60%;">0: getstatic     #19   // Field scala/collection/immutable/List(略)
+3: getstatic     #24   // Field scala/Predef$.MODULE$:Lscala/Predef$;
+6: iconst_3
+7: newarray       int  // 配列作成
+9: dup
+10: iconst_0
+11: iconst_1
+12: iastore            // 配列要素0格納
+13: dup
+14: iconst_1
+15: iconst_2
+16: iastore            // 配列要素1格納
+17: dup
+18: iconst_2
+19: iconst_3
+20: iastore            // 配列要素2格納
+21: invokevirtual #28  // Method scala/Predef$.wrapIntArray(略)
+24: invokevirtual #32  // Method scala/collection/immutable/List$.apply(略)
+27: pop
+28: return</code></pre>
+    </div>
+
+    <div class="step slide" data-x="72000" data-y="-1500">
+      <q style="margin: 10px; line-height: 50px;">ポイント</q>
+      <ul>
+        <li style="margin: 15px; line-height: 60px; font-size: 150%;">配列作成はnewarrayからのiconstしてiastoreの繰り返し</li>
+        <li style="margin: 15px; line-height: 60px; font-size: 150%;">ArrayもListもベースは一緒</li>
+        <li style="margin: 15px; line-height: 60px; font-size: 150%;">Arrayは素の配列</li>
+        <li style="margin: 15px; line-height: 60px; font-size: 150%;">Listはなんかクラスやメソッド呼び出してる</li>
       </ul>
     </div>
 
