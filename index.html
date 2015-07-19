@@ -838,13 +838,13 @@ object TraitScala {
       <q style="margin-top: 0px; font-size: 150%; line-height:1.5;">Array</q>
       <pre style="left: 30px;"><code style="font-size: 100%; line-height: 1.7;">object ArrayScala {
   def main(args: Array[String]) :Unit = {
-    Array(1, 2, 3)
+    val a = Array(1, 2, 3)
   }
 }</code></pre>
       <q style="margin-top: 0px; font-size: 150%; line-height:1.5;">List</q>
       <pre style="left: 30px;"><code style="font-size: 100%; line-height: 1.7;">object ListScala {
   def main(args: Array[String]) :Unit = {
-    List(1, 2, 3)
+    val a = List(1, 2, 3)
   }
 }</code></pre>
     </div>
@@ -853,7 +853,7 @@ object TraitScala {
       <q style="margin-top: -30px; font-size: 120%; line-height:1.5;">Arrayのコード</q>
       <pre style="left: 30px; line-height: 75%"><code style="font-size: 80%;">object ArrayScala {
   def main(args: Array[String]) :Unit = {
-    Array(1, 2, 3)
+    val a = Array(1, 2, 3)
   }
 }</code></pre>
       <q style="margin-top: 0px; font-size: 120%; line-height:1.5;">Arrayの逆アセンブル結果</q>
@@ -862,28 +862,29 @@ object TraitScala {
 3: dup
 4: iconst_0
 5: iconst_1
-6: iastore            // 配列要素0格納
+6: iastore       // 配列要素0格納
 7: dup
 8: iconst_1
 9: iconst_2
-10: iastore           // 配列要素1格納
+10: iastore      // 配列要素1格納
 11: dup
 12: iconst_2
 13: iconst_3
-14: iastore           // 配列要素2格納
-15: pop
-16: return</code></pre>
+14: iastore      // 配列要素2格納
+15: astore_2
+16: return
+</code></pre>
     </div>
 
     <div class="step slide" data-x="71000" data-y="-1500">
       <q style="margin-top: -30px; font-size: 80%; line-height:1.5;">Listのコード</q>
       <pre style=" left: 30px; line-height: 60%;"><code style="font-size: 60%;">object ListScala {
   def main(args: Array[String]) :Unit = {
-    List(1, 2, 3)
+    val a = List(1, 2, 3)
   }
 }</code></pre>
       <q style="margin-top: 0px; font-size: 80%; line-height:1.5;">Listの逆アセンブル結果</q>
-      <pre style=" left: 30px; line-height: 60%;"><code style="font-size: 60%;">0: getstatic     #19   // Field scala/collection/immutable/List(略)
+      <pre style=" left: 30px; line-height: 50%;"><code style="font-size: 50%;">0: getstatic     #19   // Field scala/collection/immutable/List(略)
 3: getstatic     #24   // Field scala/Predef$.MODULE$:Lscala/Predef$;
 6: iconst_3
 7: newarray       int  // 配列作成
@@ -899,9 +900,9 @@ object TraitScala {
 18: iconst_2
 19: iconst_3
 20: iastore            // 配列要素2格納
-21: invokevirtual #28  // Method scala/Predef$.wrapIntArray(略)
-24: invokevirtual #32  // Method scala/collection/immutable/List$.apply(略)
-27: pop
+21: invokevirtual #28  // Method scala/Predef$.wrapIntArray:([I)Lscala/collection/mutable/WrappedArray
+24: invokevirtual #32  // Method scala/collection/immutable/List$.apply:(Lscala/collection/Seq;)Lscala/collection/immutable/List;
+27: astore_2
 28: return</code></pre>
     </div>
 
